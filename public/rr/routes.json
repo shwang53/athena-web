@@ -1,0 +1,2658 @@
+[
+    
+{
+    "routes": [
+        {
+            "warnings": [],
+            "overview_polyline": {
+                "points": "gnupHkt_wAZPJLJVAhAJ?MnAHr@VV^AvDE|@ARENMTa@rBNEXKbAq@tFxACLELM|@s@|@_@`A]V~@Rz@AVNdA~AvJRdBDpBDjFBhB@z@S@_E]sBQaAI_AE{AMUCU@[Sw@_@q@SsFgCsBkAoAg@mBk@qA]aAYOAMAYtCK^GFk@h@Oh@{@xHw@lHYbCCRm@PyBh@{@XoBr@D`@Xr@bArCd@pAbAnCPl@Hv@@lAAbBBt@XbAVh@X^VJt@JdENf@@D`@K~DGbCDzCrCUBEFSNqGtAZh@CvCaApA]x@GjAGAo@j@I"
+            },
+            "legs": [
+                {
+                    "start_location": {
+                        "lat": 50.0862776,
+                        "lng": 14.4213416
+                    },
+                    "via_waypoint": [],
+                    "end_location": {
+                        "lat": 50.0895561,
+                        "lng": 14.4126693
+                    },
+                    "end_address": "Mánes Bridge, Mánesův most, 118 00 Praha 1, Czechia",
+                    "distance": {
+                        "text": "2.2 km",
+                        "value": 2229
+                    },
+                    "steps": [
+                        {
+                            "start_location": {
+                                "lat": 50.0862776,
+                                "lng": 14.4213416
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0859732,
+                                "lng": 14.4206882
+                            },
+                            "distance": {
+                                "text": "69 m",
+                                "value": 69
+                            },
+                            "html_instructions": "Head <b>southwest</b> on <b>Kožná</b> toward <b>Melantrichova</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 21
+                            },
+                            "polyline": {
+                                "points": "gnupHkt_wANHJFDDDFJVAhAD?D?"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0859732,
+                                "lng": 14.4206882
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0844194,
+                                "lng": 14.4199787
+                            },
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 226
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Michalská</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 88
+                            },
+                            "polyline": {
+                                "points": "ilupHip_wAEZEXAH?N@V@FBJ@FFHNLH?TAF?H?dAC~AAn@AL?JC"
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lat": 50.0844194,
+                                "lng": 14.4199787
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0836062,
+                                "lng": 14.4201506
+                            },
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 97
+                            },
+                            "html_instructions": "<b>Michalská</b> turns slightly <b>left</b> and becomes <b>Uhelný trh</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 40
+                            },
+                            "polyline": {
+                                "points": "sbupH{k_wAFABABCBABEFGLYrBN"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0836062,
+                                "lng": 14.4201506
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0839546,
+                                "lng": 14.4184452
+                            },
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 128
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Skořepka</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 39
+                            },
+                            "polyline": {
+                                "points": "q}tpH}l_wAEXAHIx@e@xDKz@"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.0839546,
+                                "lng": 14.4184452
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0824084,
+                                "lng": 14.4191418
+                            },
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 182
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Na Perštýně</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 47
+                            },
+                            "polyline": {
+                                "points": "u_upHib_wA^?H?f@AFAFADCDEFGDCXWXSBCFCNGRKPGd@QZK"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0824084,
+                                "lng": 14.4191418
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0814465,
+                                "lng": 14.4130803
+                            },
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 453
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Národní</b>",
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 110
+                            },
+                            "polyline": {
+                                "points": "avtpHsf_wAJ\\J`@Rz@AV@NLt@VvA^|B^|BFb@DVHr@@L@J?@BZ@h@?h@?B@lABlC?J?V?V@T@b@?D@t@"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0814465,
+                                "lng": 14.4130803
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0860625,
+                                "lng": 14.4143833
+                            },
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 527
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Smetanovo nábř.</b>",
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 117
+                            },
+                            "polyline": {
+                                "points": "aptpHw`~vAS@_E]_BMSC{@GEAI@u@Gg@Es@GC?KCE?KBIAKKOG[QKEGCGCGCMCSGGCOGe@SA?a@U_@QOIw@_@"
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lat": 50.0860625,
+                                "lng": 14.4143833
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0887255,
+                                "lng": 14.4156061
+                            },
+                            "distance": {
+                                "text": "0.3 km",
+                                "value": 310
+                            },
+                            "html_instructions": "Continue onto <b>Křižovnická</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 58
+                            },
+                            "polyline": {
+                                "points": "{lupH{h~vAq@Y{@i@WO_@Qa@SQGOEKEUIUGi@QWGOCGCQEg@OSG[KCAMCG?GAMA"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.0887255,
+                                "lng": 14.4156061
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.08892059999999,
+                                "lng": 14.4147049
+                            },
+                            "distance": {
+                                "text": "68 m",
+                                "value": 68
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>nám. J. Palacha</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 15
+                            },
+                            "polyline": {
+                                "points": "q}upHqp~vAYtCEPEL"
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lat": 50.08892059999999,
+                                "lng": 14.4147049
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0895561,
+                                "lng": 14.4126693
+                            },
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 169
+                            },
+                            "html_instructions": "<b>nám. J. Palacha</b> turns slightly <b>right</b> and becomes <b>Mánesův most</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 27
+                            },
+                            "polyline": {
+                                "points": "w~upH{j~vACBCBGHOLONC@EHCDAJCLCNALCVq@bG"
+                            }
+                        }
+                    ],
+                    "start_address": "Staroměstské nám. 1, 110 00 Praha 1-Staré Město, Czechia",
+                    "traffic_speed_entry": [],
+                    "duration": {
+                        "text": "9 mins",
+                        "value": 562
+                    }
+                },
+                {
+                    "start_location": {
+                        "lat": 50.0895561,
+                        "lng": 14.4126693
+                    },
+                    "via_waypoint": [],
+                    "end_location": {
+                        "lat": 50.0850097,
+                        "lng": 14.404588
+                    },
+                    "end_address": "Karmelitská 388/2, 118 00 Malá Strana, Czechia",
+                    "distance": {
+                        "text": "1.6 km",
+                        "value": 1636
+                    },
+                    "steps": [
+                        {
+                            "start_location": {
+                                "lat": 50.0895561,
+                                "lng": 14.4126693
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0898421,
+                                "lng": 14.4111569
+                            },
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 113
+                            },
+                            "html_instructions": "Head <b>west</b> on <b>Mánesův most</b> toward <b>Kosárkovo nábř.</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 17
+                            },
+                            "polyline": {
+                                "points": "wbvpHe~}vA?Fk@bFIj@AT"
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lat": 50.0898421,
+                                "lng": 14.4111569
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0899919,
+                                "lng": 14.4103973
+                            },
+                            "distance": {
+                                "text": "57 m",
+                                "value": 57
+                            },
+                            "html_instructions": "Continue onto <b>Klárov</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 16
+                            },
+                            "polyline": {
+                                "points": "odvpHwt}vAQ|AGd@CR"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0899919,
+                                "lng": 14.4103973
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0916892,
+                                "lng": 14.4097146
+                            },
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 195
+                            },
+                            "html_instructions": "Turn <b>right</b> to stay on <b>Klárov</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 41
+                            },
+                            "polyline": {
+                                "points": "mevpH_p}vAm@PeAVs@P_@L[JMFaBj@"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.0916892,
+                                "lng": 14.4097146
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0903035,
+                                "lng": 14.4052678
+                            },
+                            "distance": {
+                                "text": "0.4 km",
+                                "value": 365
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Valdštejnská</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 53
+                            },
+                            "polyline": {
+                                "points": "apvpHuk}vAD`@Xr@Xv@h@zAL`@Vn@`@fABHP`@JZHTFVDZBZ@T?v@?p@Ap@?T?J@H@H@HDNFRHTLX"
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lat": 50.0903035,
+                                "lng": 14.4052678
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0897319,
+                                "lng": 14.4049112
+                            },
+                            "distance": {
+                                "text": "71 m",
+                                "value": 71
+                            },
+                            "html_instructions": "Continue onto <b>Valdštejnské nám.</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 14
+                            },
+                            "polyline": {
+                                "points": "kgvpH}o|vAHNPTFHHDLDPDb@D"
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lat": 50.0897319,
+                                "lng": 14.4049112
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0885364,
+                                "lng": 14.4048161
+                            },
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 133
+                            },
+                            "html_instructions": "Continue onto <b>Tomášská</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 38
+                            },
+                            "polyline": {
+                                "points": "ycvpHum|vAhABJ@`ADl@BX@L?"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0885364,
+                                "lng": 14.4048161
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0885814,
+                                "lng": 14.4022542
+                            },
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 184
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Malostranské nám.</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 47
+                            },
+                            "polyline": {
+                                "points": "k|upHcm|vABP@NCp@Cp@A|@A\\AVATAx@AZ?D@B?@?@@DAr@@V@z@"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.0885814,
+                                "lng": 14.4022542
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.087704,
+                                "lng": 14.4038641
+                            },
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 193
+                            },
+                            "html_instructions": "Turn <b>left</b> to stay on <b>Malostranské nám.</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 50
+                            },
+                            "polyline": {
+                                "points": "s|upHa}{vAnCUB?@A@CBE@C@C?E@SDeCBuABa@"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.087704,
+                                "lng": 14.4038641
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.08521959999999,
+                                "lng": 14.404295
+                            },
+                            "distance": {
+                                "text": "0.3 km",
+                                "value": 282
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Karmelitská</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 66
+                            },
+                            "polyline": {
+                                "points": "cwupHcg|vAj@NTFJ@F@@?N?HALAVK^Mv@Wf@OTGRGZIJCHAF?NCVAp@EXA"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.08521959999999,
+                                "lng": 14.404295
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0852323,
+                                "lng": 14.4045403
+                            },
+                            "distance": {
+                                "text": "18 m",
+                                "value": 18
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Harantova</b>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 6
+                            },
+                            "polyline": {
+                                "points": "sgupH{i|vA?WAW"
+                            }
+                        },
+                        {
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0852323,
+                                "lng": 14.4045403
+                            },
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0850097,
+                                "lng": 14.404588
+                            },
+                            "distance": {
+                                "text": "25 m",
+                                "value": 25
+                            },
+                            "html_instructions": "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 7
+                            },
+                            "polyline": {
+                                "points": "ugupHkk|vATCTE"
+                            }
+                        }
+                    ],
+                    "start_address": "Mánes Bridge, Mánesův most, 118 00 Praha 1, Czechia",
+                    "traffic_speed_entry": [],
+                    "duration": {
+                        "text": "6 mins",
+                        "value": 355
+                    }
+                }
+            ],
+            "waypoint_order": [
+                0
+            ],
+            "copyrights": "Map data ©2019 Google",
+            "bounds": {
+                "southwest": {
+                    "lat": 50.0814465,
+                    "lng": 14.4022542
+                },
+                "northeast": {
+                    "lat": 50.0916892,
+                    "lng": 14.4213416
+                }
+            },
+            "summary": "Smetanovo nábř."
+        }
+    ],
+    "geocoded_waypoints": [],
+    "status": "OK",
+    "request": {
+        "travelMode": "DRIVING"
+    }
+},    
+
+{
+    "routes": [
+        {
+            "summary": "Michalská",
+            "waypoint_order": [
+                0
+            ],
+            "legs": [
+                {
+                    "steps": [
+                        {
+                            "duration": {
+                                "value": 21,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Head <b>southwest</b> on <b>Kožná</b> toward <b>Melantrichova</b>",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0859732,
+                                "lng": 14.4206882
+                            },
+                            "polyline": {
+                                "points": "gnupHkt_wANHJFDDDFJVAhAD?D?"
+                            },
+                            "start_location": {
+                                "lat": 50.0862776,
+                                "lng": 14.4213416
+                            },
+                            "distance": {
+                                "value": 69,
+                                "text": "69 m"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 88,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Michalská</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0844194,
+                                "lng": 14.4199787
+                            },
+                            "polyline": {
+                                "points": "ilupHip_wAEZEXAH?N@V@FBJ@FFHNLH?TAF?H?dAC~AAn@AL?JC"
+                            },
+                            "start_location": {
+                                "lat": 50.0859732,
+                                "lng": 14.4206882
+                            },
+                            "distance": {
+                                "value": 226,
+                                "text": "0.2 km"
+                            }
+                        },
+                        {
+                            "duration": {
+                                "value": 40,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "<b>Michalská</b> turns slightly <b>left</b> and becomes <b>Uhelný trh</b>",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0836062,
+                                "lng": 14.4201506
+                            },
+                            "polyline": {
+                                "points": "sbupH{k_wAFABABCBABEFGLYrBN"
+                            },
+                            "start_location": {
+                                "lat": 50.0844194,
+                                "lng": 14.4199787
+                            },
+                            "distance": {
+                                "value": 97,
+                                "text": "0.1 km"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 39,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Skořepka</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0839546,
+                                "lng": 14.4184452
+                            },
+                            "polyline": {
+                                "points": "q}tpH}l_wAEXAHIx@e@xDKz@"
+                            },
+                            "start_location": {
+                                "lat": 50.0836062,
+                                "lng": 14.4201506
+                            },
+                            "distance": {
+                                "value": 128,
+                                "text": "0.1 km"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 47,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Na Perštýně</b>",
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lat": 50.0824084,
+                                "lng": 14.4191418
+                            },
+                            "polyline": {
+                                "points": "u_upHib_wA^?H?f@AFAFADCDEFGDCXWXSBCFCNGRKPGd@QZK"
+                            },
+                            "start_location": {
+                                "lat": 50.0839546,
+                                "lng": 14.4184452
+                            },
+                            "distance": {
+                                "value": 182,
+                                "text": "0.2 km"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 44,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Národní</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0816753,
+                                "lng": 14.4163488
+                            },
+                            "polyline": {
+                                "points": "avtpHsf_wAJ\\J`@Rz@AV@NLt@VvA^|B^|B"
+                            },
+                            "start_location": {
+                                "lat": 50.0824084,
+                                "lng": 14.4191418
+                            },
+                            "distance": {
+                                "value": 217,
+                                "text": "0.2 km"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 52,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Karoliny Světlé</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0829162,
+                                "lng": 14.4145404
+                            },
+                            "polyline": {
+                                "points": "oqtpHeu~vAOPm@p@KLCDABEJAJ@F@H@L?H?FATEj@Ej@SHQJ{@b@EBe@RIB"
+                            },
+                            "start_location": {
+                                "lat": 50.0816753,
+                                "lng": 14.4163488
+                            },
+                            "distance": {
+                                "value": 213,
+                                "text": "0.2 km"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 12,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Konviktská</b>",
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lat": 50.0828816,
+                                "lng": 14.4139488
+                            },
+                            "polyline": {
+                                "points": "gytpH{i~vABv@B|@"
+                            },
+                            "start_location": {
+                                "lat": 50.0829162,
+                                "lng": 14.4145404
+                            },
+                            "distance": {
+                                "value": 42,
+                                "text": "42 m"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 25,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Divadelní</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0834669,
+                                "lng": 14.4133534
+                            },
+                            "polyline": {
+                                "points": "_ytpHef~vAOEE?E@I@I@IBMDUJC@CBCB?@CBANAVAZAL"
+                            },
+                            "start_location": {
+                                "lat": 50.0828816,
+                                "lng": 14.4139488
+                            },
+                            "distance": {
+                                "value": 93,
+                                "text": "93 m"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 47,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Smetanovo nábř.</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lat": 50.0814755,
+                                "lng": 14.4129844
+                            },
+                            "polyline": {
+                                "points": "u|tpHmb~vAARtANL@RBt@HP@bAFf@D@?^BZ@J@F?DAJ?"
+                            },
+                            "start_location": {
+                                "lat": 50.0834669,
+                                "lng": 14.4133534
+                            },
+                            "distance": {
+                                "value": 231,
+                                "text": "0.2 km"
+                            }
+                        }
+                    ],
+                    "duration": {
+                        "value": 415,
+                        "text": "7 mins"
+                    },
+                    "start_address": "Staroměstské nám. 1, 110 00 Praha 1-Staré Město, Czechia",
+                    "traffic_speed_entry": [],
+                    "via_waypoint": [],
+                    "end_location": {
+                        "lat": 50.0814755,
+                        "lng": 14.4129844
+                    },
+                    "start_location": {
+                        "lat": 50.0862776,
+                        "lng": 14.4213416
+                    },
+                    "end_address": "Legions' Bridge, most Legií, 110 00 Praha 1, Czechia",
+                    "distance": {
+                        "value": 1498,
+                        "text": "1.5 km"
+                    }
+                },
+                {
+                    "steps": [
+                        {
+                            "duration": {
+                                "value": 1,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Head <b>south</b> on <b>Smetanovo nábř.</b> toward <b>most Legií</b>",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0814361,
+                                "lng": 14.41299
+                            },
+                            "polyline": {
+                                "points": "gptpHc`~vAFA"
+                            },
+                            "start_location": {
+                                "lat": 50.0814755,
+                                "lng": 14.4129844
+                            },
+                            "distance": {
+                                "value": 4,
+                                "text": "4 m"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 50,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>most Legií</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0812956,
+                                "lng": 14.4079369
+                            },
+                            "polyline": {
+                                "points": "_ptpHe`~vAPpQHhK?H?J"
+                            },
+                            "start_location": {
+                                "lat": 50.0814361,
+                                "lng": 14.41299
+                            },
+                            "distance": {
+                                "value": 361,
+                                "text": "0.4 km"
+                            }
+                        },
+                        {
+                            "duration": {
+                                "value": 52,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Continue onto <b>Vítězná</b>",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lat": 50.0811813,
+                                "lng": 14.4045813
+                            },
+                            "polyline": {
+                                "points": "cotpHs`}vAF\\@z@@p@?R?N?N?J?j@@v@?Z@\\BvCB|C"
+                            },
+                            "start_location": {
+                                "lat": 50.0812956,
+                                "lng": 14.4079369
+                            },
+                            "distance": {
+                                "value": 240,
+                                "text": "0.2 km"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 94,
+                                "text": "2 mins"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Újezd</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.08521959999999,
+                                "lng": 14.404295
+                            },
+                            "polyline": {
+                                "points": "kntpHsk|vAMDK@K@w@@k@@U@O?c@@A@Y?GBK?m@?O?c@?QAK@IA]@a@@[B_@BQ@w@Da@@S@g@B{@B_@?O?I@"
+                            },
+                            "start_location": {
+                                "lat": 50.0811813,
+                                "lng": 14.4045813
+                            },
+                            "distance": {
+                                "value": 450,
+                                "text": "0.4 km"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 6,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Harantova</b>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0852323,
+                                "lng": 14.4045403
+                            },
+                            "polyline": {
+                                "points": "sgupH{i|vA?WAW"
+                            },
+                            "start_location": {
+                                "lat": 50.08521959999999,
+                                "lng": 14.404295
+                            },
+                            "distance": {
+                                "value": 18,
+                                "text": "18 m"
+                            }
+                        },
+                        {
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "value": 7,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lat": 50.0850097,
+                                "lng": 14.404588
+                            },
+                            "polyline": {
+                                "points": "ugupHkk|vATCTE"
+                            },
+                            "start_location": {
+                                "lat": 50.0852323,
+                                "lng": 14.4045403
+                            },
+                            "distance": {
+                                "value": 25,
+                                "text": "25 m"
+                            }
+                        }
+                    ],
+                    "duration": {
+                        "value": 210,
+                        "text": "4 mins"
+                    },
+                    "start_address": "Legions' Bridge, most Legií, 110 00 Praha 1, Czechia",
+                    "traffic_speed_entry": [],
+                    "via_waypoint": [],
+                    "end_location": {
+                        "lat": 50.0850097,
+                        "lng": 14.404588
+                    },
+                    "start_location": {
+                        "lat": 50.0814755,
+                        "lng": 14.4129844
+                    },
+                    "end_address": "Karmelitská 388/2, 118 00 Malá Strana, Czechia",
+                    "distance": {
+                        "value": 1098,
+                        "text": "1.1 km"
+                    }
+                }
+            ],
+            "bounds": {
+                "northeast": {
+                    "lat": 50.0862776,
+                    "lng": 14.4213416
+                },
+                "southwest": {
+                    "lat": 50.0811813,
+                    "lng": 14.404295
+                }
+            },
+            "overview_polyline": {
+                "points": "gnupHkt_wAZPJLJVAhAJ?MnAHr@VV^AvDE|@ARENMTa@rBNEXKbAq@tFxACLELM|@s@|@_@`A]V~@Rz@AVNdAv@tE^|BOPy@~@EHGVBP?t@KvAe@TaAf@o@VFtBUEc@Hk@VCDERGtAlD^nEVPAFAPpQHrKFh@BpC@~BHnJYFcABuBDo@DsBAuABeCNyCJo@?I@?WAWTCTE"
+            },
+            "copyrights": "Map data ©2019 Google",
+            "warnings": []
+        }
+    ],
+    "status": "OK",
+    "geocoded_waypoints": [],
+    "request": {
+        "travelMode": "DRIVING"
+    }
+},
+
+{
+    "geocoded_waypoints": [],
+    "status": "OK",
+    "request": {
+        "travelMode": "DRIVING"
+    },
+    "routes": [
+        {
+            "copyrights": "Map data ©2019 Google",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "2.0 km",
+                        "value": 1963
+                    },
+                    "end_address": "Jiráskův most, Praha, Czechia",
+                    "traffic_speed_entry": [],
+                    "start_location": {
+                        "lat": 50.0862776,
+                        "lng": 14.4213416
+                    },
+                    "end_location": {
+                        "lat": 50.0755881,
+                        "lng": 14.4115203
+                    },
+                    "start_address": "Staroměstské nám. 1, 110 00 Praha 1-Staré Město, Czechia",
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "69 m",
+                                "value": 69
+                            },
+                            "html_instructions": "Head <b>southwest</b> on <b>Kožná</b> toward <b>Melantrichova</b>",
+                            "start_location": {
+                                "lat": 50.0862776,
+                                "lng": 14.4213416
+                            },
+                            "end_location": {
+                                "lat": 50.0859732,
+                                "lng": 14.4206882
+                            },
+                            "polyline": {
+                                "points": "gnupHkt_wANHJFDDDFJVAhAD?D?"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 21
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 226
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Michalská</b>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0859732,
+                                "lng": 14.4206882
+                            },
+                            "end_location": {
+                                "lat": 50.0844194,
+                                "lng": 14.4199787
+                            },
+                            "polyline": {
+                                "points": "ilupHip_wAEZEXAH?N@V@FBJ@FFHNLH?TAF?H?dAC~AAn@AL?JC"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 88
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 97
+                            },
+                            "html_instructions": "<b>Michalská</b> turns slightly <b>left</b> and becomes <b>Uhelný trh</b>",
+                            "start_location": {
+                                "lat": 50.0844194,
+                                "lng": 14.4199787
+                            },
+                            "end_location": {
+                                "lat": 50.0836062,
+                                "lng": 14.4201506
+                            },
+                            "polyline": {
+                                "points": "sbupH{k_wAFABABCBABEFGLYrBN"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 40
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 128
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Skořepka</b>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0836062,
+                                "lng": 14.4201506
+                            },
+                            "end_location": {
+                                "lat": 50.0839546,
+                                "lng": 14.4184452
+                            },
+                            "polyline": {
+                                "points": "q}tpH}l_wAEXAHIx@e@xDKz@"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 39
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 182
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Na Perštýně</b>",
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.0839546,
+                                "lng": 14.4184452
+                            },
+                            "end_location": {
+                                "lat": 50.0824084,
+                                "lng": 14.4191418
+                            },
+                            "polyline": {
+                                "points": "u_upHib_wA^?H?f@AFAFADCDEFGDCXWXSBCFCNGRKPGd@QZK"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 47
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 453
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Národní</b>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0824084,
+                                "lng": 14.4191418
+                            },
+                            "end_location": {
+                                "lat": 50.0814465,
+                                "lng": 14.4130803
+                            },
+                            "polyline": {
+                                "points": "avtpHsf_wAJ\\J`@Rz@AV@NLt@VvA^|B^|BFb@DVHr@@L@J?@BZ@h@?h@?B@lABlC?J?V?V@T@b@?D@t@"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 110
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.6 km",
+                                "value": 620
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Masarykovo nábř.</b>",
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.0814465,
+                                "lng": 14.4130803
+                            },
+                            "end_location": {
+                                "lat": 50.07605419999999,
+                                "lng": 14.4139807
+                            },
+                            "polyline": {
+                                "points": "aptpHw`~vA@PNAF?D?F?XETENGVK^QZOPKFERKROTMLKLGRIPITIl@Ot@MvAOFA|@It@EFAfBKT?NADADA@@B?XF|B`@rAR"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 119
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 188
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Jiráskův most</b>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.07605419999999,
+                                "lng": 14.4139807
+                            },
+                            "end_location": {
+                                "lat": 50.0755881,
+                                "lng": 14.4115203
+                            },
+                            "polyline": {
+                                "points": "inspHkf~vALNHNJ^Jl@F`@b@zI"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 30
+                            }
+                        }
+                    ],
+                    "via_waypoint": [],
+                    "duration": {
+                        "text": "8 mins",
+                        "value": 494
+                    }
+                },
+                {
+                    "distance": {
+                        "text": "1.6 km",
+                        "value": 1587
+                    },
+                    "end_address": "Karmelitská 388/2, 118 00 Malá Strana, Czechia",
+                    "traffic_speed_entry": [],
+                    "start_location": {
+                        "lat": 50.0755881,
+                        "lng": 14.4115203
+                    },
+                    "end_location": {
+                        "lat": 50.0850097,
+                        "lng": 14.404588
+                    },
+                    "start_address": "Jiráskův most, Praha, Czechia",
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 145
+                            },
+                            "html_instructions": "Head <b>west</b> on <b>Jiráskův most</b>",
+                            "start_location": {
+                                "lat": 50.0755881,
+                                "lng": 14.4115203
+                            },
+                            "end_location": {
+                                "lat": 50.0753962,
+                                "lng": 14.4095124
+                            },
+                            "polyline": {
+                                "points": "mkspH_w}vARfEPhE"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 19
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.7 km",
+                                "value": 702
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Janáčkovo nábř.</b>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0753962,
+                                "lng": 14.4095124
+                            },
+                            "end_location": {
+                                "lat": 50.081236,
+                                "lng": 14.407931
+                            },
+                            "polyline": {
+                                "points": "gjspHmj}vA?\\Ad@C^C^CVoARe@JKBE@QF[BA?E?ICOFUF]Jq@N[FI@E@Q@s@Du@BcBDW@G@k@@m@@k@@iADcABe@@g@@k@BoABS@G@]B"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 114
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 km",
+                                "value": 247
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Vítězná</b>",
+                            "maneuver": "turn-left",
+                            "start_location": {
+                                "lat": 50.081236,
+                                "lng": 14.407931
+                            },
+                            "end_location": {
+                                "lat": 50.0811813,
+                                "lng": 14.4045813
+                            },
+                            "polyline": {
+                                "points": "wntpHq`}vAKAF\\@z@@p@?R?N?N?J?j@@v@?Z@\\BvCB|C"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 59
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "0.4 km",
+                                "value": 450
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Újezd</b>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0811813,
+                                "lng": 14.4045813
+                            },
+                            "end_location": {
+                                "lat": 50.08521959999999,
+                                "lng": 14.404295
+                            },
+                            "polyline": {
+                                "points": "kntpHsk|vAMDK@K@w@@k@@U@O?c@@A@Y?GBK?m@?O?c@?QAK@IA]@a@@[B_@BQ@w@Da@@S@g@B{@B_@?O?I@"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 94
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "18 m",
+                                "value": 18
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Harantova</b>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.08521959999999,
+                                "lng": 14.404295
+                            },
+                            "end_location": {
+                                "lat": 50.0852323,
+                                "lng": 14.4045403
+                            },
+                            "polyline": {
+                                "points": "sgupH{i|vA?WAW"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 6
+                            }
+                        },
+                        {
+                            "distance": {
+                                "text": "25 m",
+                                "value": 25
+                            },
+                            "html_instructions": "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "maneuver": "turn-right",
+                            "start_location": {
+                                "lat": 50.0852323,
+                                "lng": 14.4045403
+                            },
+                            "end_location": {
+                                "lat": 50.0850097,
+                                "lng": 14.404588
+                            },
+                            "polyline": {
+                                "points": "ugupHkk|vATCTE"
+                            },
+                            "travel_mode": "DRIVING",
+                            "duration": {
+                                "text": "1 min",
+                                "value": 7
+                            }
+                        }
+                    ],
+                    "via_waypoint": [],
+                    "duration": {
+                        "text": "5 mins",
+                        "value": 299
+                    }
+                }
+            ],
+            "waypoint_order": [
+                0
+            ],
+            "warnings": [],
+            "bounds": {
+                "northeast": {
+                    "lat": 50.0862776,
+                    "lng": 14.4213416
+                },
+                "southwest": {
+                    "lat": 50.0753962,
+                    "lng": 14.404295
+                }
+            },
+            "summary": "Masarykovo nábř.",
+            "overview_polyline": {
+                "points": "gnupHkt_wAZPJLJVAhAJ?MnAHr@VV^AvDE|@ARENMTa@rBNEXKbAq@tFxACLELM|@s@|@_@`A]V~@Rz@AVNdA~AvJRdBDpBDjFBhB@z@@PNAL?`@Ed@Mv@]hAm@dAq@d@SbAYlC]dAKzDS\\CnF|@V^VlAF`@b@zId@pKAbAG~@CVoARq@NWH]BOCe@NoAZe@HaCLoDJqLX[Bi@@F\\@z@@dA?vAFhGB|CMDWBiCDgAFmB?eA?oBJuCLuBDAo@j@I"
+            }
+        }
+    ]
+},
+
+{
+    "request": {
+        "travelMode": "DRIVING"
+    },
+    "status": "OK",
+    "routes": [
+        {
+            "overview_polyline": {
+                "points": "gnupHkt_wAZPJLJVAhAJ?MnAHr@VV^AvDE|@ARENMTa@rBNEXKbAq@tFxACLELM|@s@|@_@`A]V~@Rz@AVNdA~AvJRdBDpBDjFBhB@z@@PNAL?`@Ed@Mv@]hAm@dAq@d@SbAYlC]dAKzDS\\CnF|@dATj@L`@@jFGjBE`BCTAD~AFvBBp@f@dKNrDVlGpDi@l@KbCg@IcDCoAEmAQAyDOc@AW?yA^q@V[AaBn@}CpAMHi@PyAf@_ExAgAf@WPWNs@RmAVOBeAFyCHyBF_FLwDJe@DKAF\\BlB?b@@~BHnJYFcABuBDo@DsBAuABeCNyCJo@?I@?WAWTCTE"
+            },
+            "warnings": [],
+            "waypoint_order": [
+                0
+            ],
+            "copyrights": "Map data ©2019 Google",
+            "legs": [
+                {
+                    "traffic_speed_entry": [],
+                    "duration": {
+                        "value": 558,
+                        "text": "9 mins"
+                    },
+                    "start_address": "Staroměstské nám. 1, 110 00 Praha 1-Staré Město, Czechia",
+                    "steps": [
+                        {
+                            "html_instructions": "Head <b>southwest</b> on <b>Kožná</b> toward <b>Melantrichova</b>",
+                            "duration": {
+                                "value": 21,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 69,
+                                "text": "69 m"
+                            },
+                            "polyline": {
+                                "points": "gnupHkt_wANHJFDDDFJVAhAD?D?"
+                            },
+                            "end_location": {
+                                "lng": 14.4206882,
+                                "lat": 50.0859732
+                            },
+                            "start_location": {
+                                "lng": 14.4213416,
+                                "lat": 50.0862776
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>right</b> onto <b>Michalská</b>",
+                            "duration": {
+                                "value": 88,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 226,
+                                "text": "0.2 km"
+                            },
+                            "polyline": {
+                                "points": "ilupHip_wAEZEXAH?N@V@FBJ@FFHNLH?TAF?H?dAC~AAn@AL?JC"
+                            },
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lng": 14.4199787,
+                                "lat": 50.0844194
+                            },
+                            "start_location": {
+                                "lng": 14.4206882,
+                                "lat": 50.0859732
+                            }
+                        },
+                        {
+                            "html_instructions": "<b>Michalská</b> turns slightly <b>left</b> and becomes <b>Uhelný trh</b>",
+                            "duration": {
+                                "value": 40,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 97,
+                                "text": "0.1 km"
+                            },
+                            "polyline": {
+                                "points": "sbupH{k_wAFABABCBABEFGLYrBN"
+                            },
+                            "end_location": {
+                                "lng": 14.4201506,
+                                "lat": 50.0836062
+                            },
+                            "start_location": {
+                                "lng": 14.4199787,
+                                "lat": 50.0844194
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>right</b> onto <b>Skořepka</b>",
+                            "duration": {
+                                "value": 39,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 128,
+                                "text": "0.1 km"
+                            },
+                            "polyline": {
+                                "points": "q}tpH}l_wAEXAHIx@e@xDKz@"
+                            },
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lng": 14.4184452,
+                                "lat": 50.0839546
+                            },
+                            "start_location": {
+                                "lng": 14.4201506,
+                                "lat": 50.0836062
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>left</b> onto <b>Na Perštýně</b>",
+                            "duration": {
+                                "value": 47,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 182,
+                                "text": "0.2 km"
+                            },
+                            "polyline": {
+                                "points": "u_upHib_wA^?H?f@AFAFADCDEFGDCXWXSBCFCNGRKPGd@QZK"
+                            },
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lng": 14.4191418,
+                                "lat": 50.0824084
+                            },
+                            "start_location": {
+                                "lng": 14.4184452,
+                                "lat": 50.0839546
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>right</b> onto <b>Národní</b>",
+                            "duration": {
+                                "value": 110,
+                                "text": "2 mins"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 453,
+                                "text": "0.5 km"
+                            },
+                            "polyline": {
+                                "points": "avtpHsf_wAJ\\J`@Rz@AV@NLt@VvA^|B^|BFb@DVHr@@L@J?@BZ@h@?h@?B@lABlC?J?V?V@T@b@?D@t@"
+                            },
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lng": 14.4130803,
+                                "lat": 50.0814465
+                            },
+                            "start_location": {
+                                "lng": 14.4191418,
+                                "lat": 50.0824084
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>left</b> onto <b>Masarykovo nábř.</b>",
+                            "duration": {
+                                "value": 119,
+                                "text": "2 mins"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 620,
+                                "text": "0.6 km"
+                            },
+                            "polyline": {
+                                "points": "aptpHw`~vA@PNAF?D?F?XETENGVK^QZOPKFERKROTMLKLGRIPITIl@Ot@MvAOFA|@It@EFAfBKT?NADADA@@B?XF|B`@rAR"
+                            },
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lng": 14.4139807,
+                                "lat": 50.07605419999999
+                            },
+                            "start_location": {
+                                "lng": 14.4130803,
+                                "lat": 50.0814465
+                            }
+                        },
+                        {
+                            "html_instructions": "Continue onto <b>Rašínovo nábř.</b>",
+                            "duration": {
+                                "value": 71,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 342,
+                                "text": "0.3 km"
+                            },
+                            "polyline": {
+                                "points": "inspHkf~vAp@NRDj@L`@@`@?hEGv@Cr@Ap@An@ATA"
+                            },
+                            "end_location": {
+                                "lng": 14.4138949,
+                                "lat": 50.0729886
+                            },
+                            "start_location": {
+                                "lng": 14.4139807,
+                                "lat": 50.07605419999999
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>right</b> onto <b>Palackého most</b>",
+                            "duration": {
+                                "value": 23,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 122,
+                                "text": "0.1 km"
+                            },
+                            "polyline": {
+                                "points": "e{rpHye~vAD~AFnB?F@H@f@FfA"
+                            },
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lng": 14.4122041,
+                                "lat": 50.0728604
+                            },
+                            "start_location": {
+                                "lng": 14.4138949,
+                                "lat": 50.0729886
+                            }
+                        }
+                    ],
+                    "distance": {
+                        "value": 2239,
+                        "text": "2.2 km"
+                    },
+                    "end_address": "Palackého most, Praha, Czechia",
+                    "end_location": {
+                        "lng": 14.4122041,
+                        "lat": 50.0728604
+                    },
+                    "start_location": {
+                        "lng": 14.4213416,
+                        "lat": 50.0862776
+                    },
+                    "via_waypoint": []
+                },
+                {
+                    "traffic_speed_entry": [],
+                    "duration": {
+                        "value": 427,
+                        "text": "7 mins"
+                    },
+                    "start_address": "Palackého most, Praha, Czechia",
+                    "steps": [
+                        {
+                            "html_instructions": "Head <b>west</b> on <b>Palackého most</b> toward <b>Janáčkovo nábř.</b>",
+                            "duration": {
+                                "value": 22,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 151,
+                                "text": "0.2 km"
+                            },
+                            "polyline": {
+                                "points": "kzrpHg{}vAN|CN~C@X@X?@Bj@"
+                            },
+                            "end_location": {
+                                "lng": 14.4101186,
+                                "lat": 50.0726579
+                            },
+                            "start_location": {
+                                "lng": 14.4122041,
+                                "lat": 50.0728604
+                            }
+                        },
+                        {
+                            "html_instructions": "Continue onto <b>Lidická</b>",
+                            "duration": {
+                                "value": 28,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 127,
+                                "text": "0.1 km"
+                            },
+                            "polyline": {
+                                "points": "cyrpHgn}vA@^@RB\\Dx@Bp@H~AB`A"
+                            },
+                            "end_location": {
+                                "lng": 14.4083643,
+                                "lat": 50.0724951
+                            },
+                            "start_location": {
+                                "lng": 14.4101186,
+                                "lat": 50.0726579
+                            }
+                        },
+                        {
+                            "html_instructions": "<b>Lidická</b> turns <b>left</b> and becomes <b>Svornosti</b>",
+                            "duration": {
+                                "value": 39,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 200,
+                                "text": "0.2 km"
+                            },
+                            "polyline": {
+                                "points": "cxrpHgc}vApBW~@Qd@IFANErBa@"
+                            },
+                            "end_location": {
+                                "lng": 14.4088288,
+                                "lat": 50.0707198
+                            },
+                            "start_location": {
+                                "lng": 14.4083643,
+                                "lat": 50.0724951
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>left</b> onto <b>J. Plachty</b>",
+                            "duration": {
+                                "value": 26,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 116,
+                                "text": "0.1 km"
+                            },
+                            "polyline": {
+                                "points": "_mrpHef}vACkAEwACmA?AEmA"
+                            },
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lng": 14.4104411,
+                                "lat": 50.07081729999999
+                            },
+                            "start_location": {
+                                "lng": 14.4088288,
+                                "lat": 50.0707198
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>left</b> onto <b>Hořejší nábř.</b>",
+                            "duration": {
+                                "value": 25,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 228,
+                                "text": "0.2 km"
+                            },
+                            "polyline": {
+                                "points": "smrpHgp}vAQAS?eDOU?MAG?O?e@Ls@Pa@NOF"
+                            },
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lng": 14.4102592,
+                                "lat": 50.0728434
+                            },
+                            "start_location": {
+                                "lng": 14.4104411,
+                                "lat": 50.07081729999999
+                            }
+                        },
+                        {
+                            "html_instructions": "Slight <b>right</b> onto <b>Nábřežní</b>",
+                            "duration": {
+                                "value": 46,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 424,
+                                "text": "0.4 km"
+                            },
+                            "polyline": {
+                                "points": "gzrpHco}vAUAE?GBy@Z[LC@oAf@OF[La@RE@GFWHQFIDa@Lc@NIBcA\\a@Na@Pw@Xi@T]PGDOJGF"
+                            },
+                            "maneuver": "turn-slight-right",
+                            "end_location": {
+                                "lng": 14.4085047,
+                                "lat": 50.0764747
+                            },
+                            "start_location": {
+                                "lng": 14.4102592,
+                                "lat": 50.0728434
+                            }
+                        },
+                        {
+                            "html_instructions": "Merge onto <b>Janáčkovo nábř.</b>",
+                            "duration": {
+                                "value": 75,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 532,
+                                "text": "0.5 km"
+                            },
+                            "polyline": {
+                                "points": "}pspHcd}vAOFUF]Jq@N[FI@E@Q@s@Du@BcBDW@G@k@@m@@k@@iADcABe@@g@@k@BoABS@G@]B"
+                            },
+                            "maneuver": "merge",
+                            "end_location": {
+                                "lng": 14.407931,
+                                "lat": 50.081236
+                            },
+                            "start_location": {
+                                "lng": 14.4085047,
+                                "lat": 50.0764747
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>left</b> onto <b>Vítězná</b>",
+                            "duration": {
+                                "value": 59,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 247,
+                                "text": "0.2 km"
+                            },
+                            "polyline": {
+                                "points": "wntpHq`}vAKAF\\@z@@p@?R?N?N?J?j@@v@?Z@\\BvCB|C"
+                            },
+                            "maneuver": "turn-left",
+                            "end_location": {
+                                "lng": 14.4045813,
+                                "lat": 50.0811813
+                            },
+                            "start_location": {
+                                "lng": 14.407931,
+                                "lat": 50.081236
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>right</b> onto <b>Újezd</b>",
+                            "duration": {
+                                "value": 94,
+                                "text": "2 mins"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 450,
+                                "text": "0.4 km"
+                            },
+                            "polyline": {
+                                "points": "kntpHsk|vAMDK@K@w@@k@@U@O?c@@A@Y?GBK?m@?O?c@?QAK@IA]@a@@[B_@BQ@w@Da@@S@g@B{@B_@?O?I@"
+                            },
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lng": 14.404295,
+                                "lat": 50.08521959999999
+                            },
+                            "start_location": {
+                                "lng": 14.4045813,
+                                "lat": 50.0811813
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>right</b> onto <b>Harantova</b>",
+                            "duration": {
+                                "value": 6,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 18,
+                                "text": "18 m"
+                            },
+                            "polyline": {
+                                "points": "sgupH{i|vA?WAW"
+                            },
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lng": 14.4045403,
+                                "lat": 50.0852323
+                            },
+                            "start_location": {
+                                "lng": 14.404295,
+                                "lat": 50.08521959999999
+                            }
+                        },
+                        {
+                            "html_instructions": "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "duration": {
+                                "value": 7,
+                                "text": "1 min"
+                            },
+                            "travel_mode": "DRIVING",
+                            "distance": {
+                                "value": 25,
+                                "text": "25 m"
+                            },
+                            "polyline": {
+                                "points": "ugupHkk|vATCTE"
+                            },
+                            "maneuver": "turn-right",
+                            "end_location": {
+                                "lng": 14.404588,
+                                "lat": 50.0850097
+                            },
+                            "start_location": {
+                                "lng": 14.4045403,
+                                "lat": 50.0852323
+                            }
+                        }
+                    ],
+                    "distance": {
+                        "value": 2518,
+                        "text": "2.5 km"
+                    },
+                    "end_address": "Karmelitská 388/2, 118 00 Malá Strana, Czechia",
+                    "end_location": {
+                        "lng": 14.404588,
+                        "lat": 50.0850097
+                    },
+                    "start_location": {
+                        "lng": 14.4122041,
+                        "lat": 50.0728604
+                    },
+                    "via_waypoint": []
+                }
+            ],
+            "bounds": {
+                "southwest": {
+                    "lng": 14.404295,
+                    "lat": 50.0707198
+                },
+                "northeast": {
+                    "lng": 14.4213416,
+                    "lat": 50.0862776
+                }
+            },
+            "summary": "Masarykovo nábř."
+        }
+    ],
+    "geocoded_waypoints": []
+},
+
+{
+    "request": {
+        "travelMode": "DRIVING"
+    },
+    "status": "OK",
+    "routes": [
+        {
+            "copyrights": "Map data ©2019 Google",
+            "summary": "Smetanovo nábř.",
+            "legs": [
+                {
+                    "start_location": {
+                        "lng": 14.4213416,
+                        "lat": 50.0862776
+                    },
+                    "traffic_speed_entry": [],
+                    "start_address": "Staroměstské nám. 1, 110 00 Praha 1-Staré Město, Czechia",
+                    "steps": [
+                        {
+                            "start_location": {
+                                "lng": 14.4213416,
+                                "lat": 50.0862776
+                            },
+                            "duration": {
+                                "value": 21,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Head <b>southwest</b> on <b>Kožná</b> toward <b>Melantrichova</b>",
+                            "polyline": {
+                                "points": "gnupHkt_wANHJFDDDFJVAhAD?D?"
+                            },
+                            "distance": {
+                                "value": 69,
+                                "text": "69 m"
+                            },
+                            "end_location": {
+                                "lng": 14.4206882,
+                                "lat": 50.0859732
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4206882,
+                                "lat": 50.0859732
+                            },
+                            "duration": {
+                                "value": 88,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Michalská</b>",
+                            "polyline": {
+                                "points": "ilupHip_wAEZEXAH?N@V@FBJ@FFHNLH?TAF?H?dAC~AAn@AL?JC"
+                            },
+                            "distance": {
+                                "value": 226,
+                                "text": "0.2 km"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4199787,
+                                "lat": 50.0844194
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4199787,
+                                "lat": 50.0844194
+                            },
+                            "duration": {
+                                "value": 40,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "<b>Michalská</b> turns slightly <b>left</b> and becomes <b>Uhelný trh</b>",
+                            "polyline": {
+                                "points": "sbupH{k_wAFABABCBABEFGLYrBN"
+                            },
+                            "distance": {
+                                "value": 97,
+                                "text": "0.1 km"
+                            },
+                            "end_location": {
+                                "lng": 14.4201506,
+                                "lat": 50.0836062
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4201506,
+                                "lat": 50.0836062
+                            },
+                            "duration": {
+                                "value": 39,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Skořepka</b>",
+                            "polyline": {
+                                "points": "q}tpH}l_wAEXAHIx@e@xDKz@"
+                            },
+                            "distance": {
+                                "value": 128,
+                                "text": "0.1 km"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4184452,
+                                "lat": 50.0839546
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4184452,
+                                "lat": 50.0839546
+                            },
+                            "duration": {
+                                "value": 47,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Na Perštýně</b>",
+                            "polyline": {
+                                "points": "u_upHib_wA^?H?f@AFAFADCDEFGDCXWXSBCFCNGRKPGd@QZK"
+                            },
+                            "distance": {
+                                "value": 182,
+                                "text": "0.2 km"
+                            },
+                            "maneuver": "turn-left",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4191418,
+                                "lat": 50.0824084
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4191418,
+                                "lat": 50.0824084
+                            },
+                            "duration": {
+                                "value": 110,
+                                "text": "2 mins"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Národní</b>",
+                            "polyline": {
+                                "points": "avtpHsf_wAJ\\J`@Rz@AV@NLt@VvA^|B^|BFb@DVHr@@L@J?@BZ@h@?h@?B@lABlC?J?V?V@T@b@?D@t@"
+                            },
+                            "distance": {
+                                "value": 453,
+                                "text": "0.5 km"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4130803,
+                                "lat": 50.0814465
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4130803,
+                                "lat": 50.0814465
+                            },
+                            "duration": {
+                                "value": 117,
+                                "text": "2 mins"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Smetanovo nábř.</b>",
+                            "polyline": {
+                                "points": "aptpHw`~vAS@_E]_BMSC{@GEAI@u@Gg@Es@GC?KCE?KBIAKKOG[QKEGCGCGCMCSGGCOGe@SA?a@U_@QOIw@_@"
+                            },
+                            "distance": {
+                                "value": 527,
+                                "text": "0.5 km"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4143833,
+                                "lat": 50.0860625
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4143833,
+                                "lat": 50.0860625
+                            },
+                            "duration": {
+                                "value": 58,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Continue onto <b>Křižovnická</b>",
+                            "polyline": {
+                                "points": "{lupH{h~vAq@Y{@i@WO_@Qa@SQGOEKEUIUGi@QWGOCGCQEg@OSG[KCAMCG?GAMA"
+                            },
+                            "distance": {
+                                "value": 310,
+                                "text": "0.3 km"
+                            },
+                            "end_location": {
+                                "lng": 14.4156061,
+                                "lat": 50.0887255
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4156061,
+                                "lat": 50.0887255
+                            },
+                            "duration": {
+                                "value": 11,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Continue onto <b>nám. J. Palacha</b>",
+                            "polyline": {
+                                "points": "q}upHqp~vAgBi@"
+                            },
+                            "distance": {
+                                "value": 60,
+                                "text": "60 m"
+                            },
+                            "end_location": {
+                                "lng": 14.4158182,
+                                "lat": 50.08924870000001
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4158182,
+                                "lat": 50.08924870000001
+                            },
+                            "duration": {
+                                "value": 51,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Continue onto <b>17. listopadu</b>",
+                            "polyline": {
+                                "points": "y`vpH{q~vAQGkA_@QEmAa@SGEEMIIIWUaA}@IICCCGCEGKQ[Wk@Ys@e@qA"
+                            },
+                            "distance": {
+                                "value": 314,
+                                "text": "0.3 km"
+                            },
+                            "end_location": {
+                                "lng": 14.4180355,
+                                "lat": 50.0915776
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4180355,
+                                "lat": 50.0915776
+                            },
+                            "duration": {
+                                "value": 16,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "<b>17. listopadu</b> turns <b>left</b> and becomes <b>nám. Curieových</b>",
+                            "polyline": {
+                                "points": "kovpHw__wAQDGBE@QJIDMJ[RMH"
+                            },
+                            "distance": {
+                                "value": 70,
+                                "text": "70 m"
+                            },
+                            "end_location": {
+                                "lng": 14.4176814,
+                                "lat": 50.09215769999999
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4176814,
+                                "lat": 50.09215769999999
+                            },
+                            "duration": {
+                                "value": 1,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Dvořákovo nábř.</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                            "polyline": {
+                                "points": "_svpHo}~vAAI"
+                            },
+                            "distance": {
+                                "value": 4,
+                                "text": "4 m"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4177261,
+                                "lat": 50.09217289999999
+                            }
+                        }
+                    ],
+                    "via_waypoint": [],
+                    "distance": {
+                        "value": 2440,
+                        "text": "2.4 km"
+                    },
+                    "end_address": "Čech Bridge, 110 00 Praha 1, Czechia",
+                    "end_location": {
+                        "lng": 14.4177261,
+                        "lat": 50.09217289999999
+                    },
+                    "duration": {
+                        "value": 599,
+                        "text": "10 mins"
+                    }
+                },
+                {
+                    "start_location": {
+                        "lng": 14.4177261,
+                        "lat": 50.09217289999999
+                    },
+                    "traffic_speed_entry": [],
+                    "start_address": "Čech Bridge, 110 00 Praha 1, Czechia",
+                    "steps": [
+                        {
+                            "start_location": {
+                                "lng": 14.4177261,
+                                "lat": 50.09217289999999
+                            },
+                            "duration": {
+                                "value": 1,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Head <b>southwest</b> on <b>Dvořákovo nábř.</b> toward <b>Čechův most</b>",
+                            "polyline": {
+                                "points": "asvpHy}~vA@H"
+                            },
+                            "distance": {
+                                "value": 4,
+                                "text": "4 m"
+                            },
+                            "end_location": {
+                                "lng": 14.4176814,
+                                "lat": 50.09215769999999
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4176814,
+                                "lat": 50.09215769999999
+                            },
+                            "duration": {
+                                "value": 39,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Čechův most</b>",
+                            "polyline": {
+                                "points": "_svpHo}~vAQL_DlBgDpB"
+                            },
+                            "distance": {
+                                "value": 211,
+                                "text": "0.2 km"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4164939,
+                                "lat": 50.0938938
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4164939,
+                                "lat": 50.0938938
+                            },
+                            "duration": {
+                                "value": 66,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Nábřeží Edvarda Beneše</b>",
+                            "polyline": {
+                                "points": "y}vpHav~vAJl@Rz@^fBXrAH`@@JBL@H?@BPB\\HvAFf@Jp@Nz@t@xCFTFPLZ?@LXLTLVT^FHPZV`@Zf@T^LPLR^l@T`@DDf@~@"
+                            },
+                            "distance": {
+                                "value": 568,
+                                "text": "0.6 km"
+                            },
+                            "maneuver": "turn-left",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4099335,
+                                "lat": 50.0912008
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4099335,
+                                "lat": 50.0912008
+                            },
+                            "duration": {
+                                "value": 10,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Klárov</b>",
+                            "polyline": {
+                                "points": "_mvpHam}vAaBj@"
+                            },
+                            "distance": {
+                                "value": 57,
+                                "text": "57 m"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4097146,
+                                "lat": 50.0916892
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4097146,
+                                "lat": 50.0916892
+                            },
+                            "duration": {
+                                "value": 53,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Valdštejnská</b>",
+                            "polyline": {
+                                "points": "apvpHuk}vAD`@Xr@Xv@h@zAL`@Vn@`@fABHP`@JZHTFVDZBZ@T?v@?p@Ap@?T?J@H@H@HDNFRHTLX"
+                            },
+                            "distance": {
+                                "value": 365,
+                                "text": "0.4 km"
+                            },
+                            "maneuver": "turn-left",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4052678,
+                                "lat": 50.0903035
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4052678,
+                                "lat": 50.0903035
+                            },
+                            "duration": {
+                                "value": 14,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Continue onto <b>Valdštejnské nám.</b>",
+                            "polyline": {
+                                "points": "kgvpH}o|vAHNPTFHHDLDPDb@D"
+                            },
+                            "distance": {
+                                "value": 71,
+                                "text": "71 m"
+                            },
+                            "end_location": {
+                                "lng": 14.4049112,
+                                "lat": 50.0897319
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4049112,
+                                "lat": 50.0897319
+                            },
+                            "duration": {
+                                "value": 38,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Continue onto <b>Tomášská</b>",
+                            "polyline": {
+                                "points": "ycvpHum|vAhABJ@`ADl@BX@L?"
+                            },
+                            "distance": {
+                                "value": 133,
+                                "text": "0.1 km"
+                            },
+                            "end_location": {
+                                "lng": 14.4048161,
+                                "lat": 50.0885364
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4048161,
+                                "lat": 50.0885364
+                            },
+                            "duration": {
+                                "value": 47,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Malostranské nám.</b>",
+                            "polyline": {
+                                "points": "k|upHcm|vABP@NCp@Cp@A|@A\\AVATAx@AZ?D@B?@?@@DAr@@V@z@"
+                            },
+                            "distance": {
+                                "value": 184,
+                                "text": "0.2 km"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4022542,
+                                "lat": 50.0885814
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4022542,
+                                "lat": 50.0885814
+                            },
+                            "duration": {
+                                "value": 50,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> to stay on <b>Malostranské nám.</b>",
+                            "polyline": {
+                                "points": "s|upHa}{vAnCUB?@A@CBE@C@C?E@SDeCBuABa@"
+                            },
+                            "distance": {
+                                "value": 193,
+                                "text": "0.2 km"
+                            },
+                            "maneuver": "turn-left",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4038641,
+                                "lat": 50.087704
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4038641,
+                                "lat": 50.087704
+                            },
+                            "duration": {
+                                "value": 66,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Karmelitská</b>",
+                            "polyline": {
+                                "points": "cwupHcg|vAj@NTFJ@F@@?N?HALAVK^Mv@Wf@OTGRGZIJCHAF?NCVAp@EXA"
+                            },
+                            "distance": {
+                                "value": 282,
+                                "text": "0.3 km"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.404295,
+                                "lat": 50.08521959999999
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.404295,
+                                "lat": 50.08521959999999
+                            },
+                            "duration": {
+                                "value": 6,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Harantova</b>",
+                            "polyline": {
+                                "points": "sgupH{i|vA?WAW"
+                            },
+                            "distance": {
+                                "value": 18,
+                                "text": "18 m"
+                            },
+                            "maneuver": "turn-left",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.4045403,
+                                "lat": 50.0852323
+                            }
+                        },
+                        {
+                            "start_location": {
+                                "lng": 14.4045403,
+                                "lat": 50.0852323
+                            },
+                            "duration": {
+                                "value": 7,
+                                "text": "1 min"
+                            },
+                            "html_instructions": "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "ugupHkk|vATCTE"
+                            },
+                            "distance": {
+                                "value": 25,
+                                "text": "25 m"
+                            },
+                            "maneuver": "turn-right",
+                            "travel_mode": "DRIVING",
+                            "end_location": {
+                                "lng": 14.404588,
+                                "lat": 50.0850097
+                            }
+                        }
+                    ],
+                    "via_waypoint": [],
+                    "distance": {
+                        "value": 2111,
+                        "text": "2.1 km"
+                    },
+                    "end_address": "Karmelitská 388/2, 118 00 Malá Strana, Czechia",
+                    "end_location": {
+                        "lng": 14.404588,
+                        "lat": 50.0850097
+                    },
+                    "duration": {
+                        "value": 397,
+                        "text": "7 mins"
+                    }
+                }
+            ],
+            "waypoint_order": [
+                0
+            ],
+            "overview_polyline": {
+                "points": "gnupHkt_wAZPJLJVAhAJ?MnAHr@VV^AvDE|@ARENMTa@rBNEXKbAq@tFxACLELM|@s@|@_@`A]V~@Rz@AVNdA~AvJRdBDpBDjFBhB@z@S@_E]sBQaAI_AE{AMUCU@[Sw@_@q@SsFgCsBkAoAg@mBk@qA]aAYOAuBk@}DoAYMWSgBaBa@u@q@_Be@qAQDMD[Pi@^MHAI@HQLgI~ExAdHPdAPhCRxAdAtE\\dA~@fB~CbFZf@f@~@aBj@D`@Xr@bArCjAbD\\|@Pl@Hv@@lAAdCJl@Ph@Vh@X^VJt@JtADvCJD`@GbBGhCA~A?|@BrArCUHOHcDFwB`AVd@BVCv@YhCw@x@OrBMAo@j@I"
+            },
+            "bounds": {
+                "northeast": {
+                    "lng": 14.4213416,
+                    "lat": 50.0938938
+                },
+                "southwest": {
+                    "lng": 14.4022542,
+                    "lat": 50.0814465
+                }
+            },
+            "warnings": []
+        }
+    ],
+    "geocoded_waypoints": []
+}
+
+]

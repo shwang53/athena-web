@@ -1,0 +1,298 @@
+extends ../layout
+
+block content
+  style.
+    #map {
+      width: 100%;
+      height: 600px;
+    }  
+
+    label{      
+      display: block; 
+      height: 35px; 
+      line-height: 35px; 
+      // border: 1px solid #000;       
+      margin-top: -7px;
+    }
+
+    button{
+      height: 35px;
+      margin-top: -7px;
+    }
+      
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Situational Awareness in Disaster Areas
+
+  p
+
+  .row
+    .col-12
+      #map
+  
+  p
+  .btn-group.d-flex(role='group')
+    button.btn-primary(id='select', onclick='select()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Select
+    button.btn-primary(id='clear', onclick='clearOverlays()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Clear    
+    button.btn-primary(id='reset', onclick='reset()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Reset    
+    button.btn-primary(id='retrieve', onclick='retrieve()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Retrieve
+
+
+  script.
+    var map;  
+
+    var overlays = [];
+    var sensor_markers = {}; 
+    var image_markers = [];
+    var selected_icon = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+    var unselected_icon = 'http://maps.google.com/mapfiles/ms/icons/yellow.png';
+
+    var selected = [];
+    var sorted_list = [];    
+    var cur_item_idx = 0;
+
+    get_prefix();       
+
+    function select() {
+      console.log("Select zone");
+
+      if (overlays.length == 0) {
+        console.log("Zone not selected");
+        return
+      }
+      
+      for (var i=0; i < overlays.length; i++) {
+        var rec = overlays[i];
+        var ne = rec.overlay.getBounds().getNorthEast();
+        var sw = rec.overlay.getBounds().getSouthWest();                
+        for (var key in sensor_markers) {
+          var marker = sensor_markers[key];
+          var p = marker.getPosition();
+          if (sw.lat() <= p.lat() && p.lat() <= ne.lat() && sw.lng() <= p.lng() && p.lng() <= ne.lng()) {
+            selected.push(marker.title);
+            //- marker.setIcon(selected_icon)            
+          }
+        }
+      }
+
+      console.log(selected.toString());      
+      //- selected = [];
+      cur_item_idx = 0;
+      clearOverlays();      
+      request_list(selected);      
+    } 
+
+    function request_list(selected) {
+      reset()
+      fetch('/apps/sa', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "select",
+          prefix: selected,          
+        })
+      }).then(function(response) {        
+        return response.text();
+      }).then(function(text) { 
+        // <!DOCTYPE ....      
+        console.log(text);     
+        for (var i=0; i<selected.length; i++){
+          sensor_markers[selected[i]].setIcon(selected_icon);
+        }                   
+        loadSortedList(text);   
+      });       
+
+    }
+
+    function clearOverlays() {
+
+      for (var i=0; i < overlays.length; i++) {
+        overlays[i].overlay.setMap(null);
+      }
+      overlays = [];
+      
+    }  
+
+    function retrieve() {
+
+      console.log("Retrieve image");           
+
+      if (cur_item_idx >= sorted_list.length) {
+        console.log("No more data");        
+        return
+      }
+
+      var img_info = sorted_list[cur_item_idx];
+      var image_marker = new google.maps.Marker({
+        position: new google.maps.LatLng(img_info[2][0], img_info[2][1]),         
+        title: img_info[0]+'/'+img_info[1],        
+        animation: google.maps.Animation.DROP
+      });
+
+      var filename = img_info[1]+'.jpg';
+      var infowindow = new google.maps.InfoWindow({
+        content:`<div style='float:middle'><img src='/eu_flood_dataset/imgs/${filename}', width=250, height=200, align="middle"></div><div style='float:middle'><b>${image_marker.title}</b><br/>${img_info[3]}</div>`,
+        maxWidth: 300,
+        maxHeight: 300
+      });
+      google.maps.event.addListener(image_marker, 'click', function(){infowindow.open(map, image_marker);});
+      image_markers.push(image_marker);
+      image_marker.setMap(map);
+
+      fetch('/apps/sa', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "retrieve",
+          name: img_info[0]+'/'+img_info[1]
+        })
+      }).then(function(response) {        
+        return response.text();
+      }).then(function(text) { 
+        // <!DOCTYPE ....  
+        console.log(text);        
+      });
+
+      cur_item_idx++;
+
+    }
+
+    function reset() {
+      selected = [];
+      cur_item_idx = 0;      
+
+
+      clearOverlays();
+      
+      for (var key in sensor_markers) {
+        sensor_markers[key].setIcon(unselected_icon);
+      }
+
+      for (var i=0; i<image_markers.length; i++) {
+        image_markers[i].setMap(null);
+      }
+      image_markers = [];      
+
+    }  
+
+    function get_prefix() {      
+      fetch('/apps/sa', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "prefix"          
+        })
+      }).then(function(response) {        
+        return response.text();
+      }).then(function(text) { 
+        // <!DOCTYPE ....        
+        prefix = JSON.parse(text);        
+        process_prefix(prefix);
+      });      
+    }
+
+    function process_prefix(prefix) {      
+      
+      var meta;
+      var sensor_marker;
+      for (var key in prefix) {        
+        meta = prefix[key][prefix[key].length-1];
+        sensor_marker = new google.maps.Marker({
+          position: new google.maps.LatLng(meta[0][0], meta[0][1]), 
+          icon: {            
+            //- url: 'http://maps.google.com/mapfiles/kml/shapes/man.png',
+            url: unselected_icon,
+            scaledSize: new google.maps.Size(30, 30)
+          },
+          title: key,
+          clickable: false,
+          animation: google.maps.Animation.DROP
+        });        
+        sensor_marker.setMap(map);
+        sensor_markers[key] = sensor_marker;
+      }
+    }
+
+    function loadSortedList(filePath) {
+      fetch(filePath, {cache: "no-cache"})
+      .then(function(response) {
+          return response.json();
+      }).then(function(jsonData) {          
+          //- console.log(jsonData);
+          sorted_list = jsonData;
+      }).catch(function(err) {
+          console.log("Opps, Something went wrong!", err);
+      })
+    }  
+
+    function initMap() {       
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 49.950747, lng: 14.413321 }, 
+        zoom: 6,  
+      });
+
+      var drawingManager = new google.maps.drawing.DrawingManager({
+          // drawingMode: google.maps.drawing.OverlayType.RECTANGLE,
+          drawingControl: true,
+          drawingControlOptions: {
+            position: google.maps.ControlPosition.TOP_CENTER,
+            drawingModes: ['rectangle']  // circle, polygon, ...
+          },          
+        });
+        drawingManager.setMap(map);
+
+      google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+        if (event.type == 'rectangle') {
+          overlays.push(event);
+        }        
+      });
+
+      // Customize map style
+      var customStyled =  [
+                            {
+                              "featureType": "administrative",
+                              "elementType": "geometry",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "poi",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "road",
+                              "elementType": "labels.icon",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "transit",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            }
+                          ]
+      map.set('styles',customStyled);      
+    }
+
+
+  script(async defer src=`https://maps.googleapis.com/maps/api/js?key=`+process.env.GOOGLE_MAP_API_KEY+`&libraries=drawing&callback=initMap`)    

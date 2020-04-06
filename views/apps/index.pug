@@ -1,0 +1,43 @@
+extends ../layout
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Demos & Applications
+
+  .row
+    .col-md-4
+      a(href='/apps/target_tracker', style='color: #000000')
+        .card(style='background-color: #ffffff').mb-3
+          .card-body
+            img(src='/target_tracker/target_tracker.jpg', height=40, hspace=10)
+            |  <b>Vehicle Tracker in USC Campus</b>
+
+    .col-md-4
+      a(href='/apps/eu_flood_dataset', style='color: #000000')
+        .card(style='background-color: #ffffff').mb-3
+          .card-body
+            img(src='/eu_flood_dataset/floods.png', height=40, hspace=10)
+            |  <b>EU Floods Dataset Search</b>
+
+    .col-md-4
+      a(href='/apps/sa', style='color: #000000')
+        .card(style='background-color: #ffffff').mb-3
+          .card-body
+            img(src='/sa/sa.png', height=40, hspace=10)
+            |  <b>Situational Awareness</b>
+
+  .row
+    .col-md-4
+      a(href='/apps/rr', style='color: #000000')
+        .card(style='background-color: #ffffff').mb-3
+          .card-body
+            img(src='/rr/rr.png', height=40, hspace=10)
+            |  <b>Route Reconnaissance</b>
+
+    // .col-md-4
+    //   a(href='/apps/hello_jd', style='color: #000000')
+    //     .card(style='background-color: #ffffff').mb-3
+    //       .card-body
+    //         img(src='/hello_jd/hello_jd.jpg', height=40)
+    //         |  Hello JD
+

@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  style.
+    p {
+      text-align: justify;
+    }
+    li {
+      text-align: justify;
+      list-style-position: outside;
+    }
+
+  h1 Welcome to Athena
+  p.lead Decision-driven Execution Paradigm
+  hr
+  .row
+    .col-md-6
+      h2 Need
+      p.lead Alleviate bandwidth bottlenecks in tactical communication networks in the face of growing demand on content to support accurate decision making. 
+
+    .col-md-6
+      h2 Capability
+      p.lead An information retrieval system that understands the mission and decision logic enough to anticipate information needs and significantly reduce retrieval cost of relevant information
+        //- a.btn.btn-raised(href='#', role='button') View details »
+  p
+  p
+  .row
+    .col-md-6
+      h2 Technologies
+      p.lead Intelligent networks that allow "command-by-intent”      
+      li Users specify high-level decisions to be made, as opposed to specific objects to be retrieved and sources to be contacted.
+      li Network works back autonomously from the decisions to be made to an efficient information acquisition plan that furnishes the most important unknowns needed for these decisions.
+      li Network optimizes and executes the information acquisition plan in the face of resource bottlenecks.
+
+      p      
+      p
+
+      h2 Achievements
+      p.lead Prototype ported to the Network Science Research Lab (NSRL), at ARL
+      li Evaluation at NSRL in the context of (i) a route reconnaissance application and (ii) a target tracking task in the context of a NATO training scenario (Anglova).
+      li Up to a five-fold reduction in network bandwidth over simple baselines. 
+      li Joint improvements in quality of delivered information, delivery latency, delivery cost, and mission success rate.
+  
+    .col-md-6      
+      img(src='/athena.png', height=400, vspace=50, hspace=50)
+    //- .col-md-6
+    //-   h2 Heading
+    //-   p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    //-   p
+    //-     a.btn.btn-raised(href='#', role='button') View details »
+
+  
+    
+
+  //- .row
+  //-   .col-md-6
+  //-     h2 Achievements
+  //-     p.lead Prototype ported to the Network Science Research Lab (NSRL), at ARL
+  //-     p Evaluation at NSRL in the context of (i) a route reconnaissance application and (ii) a target tracking task in the context of a NATO training scenario (Anglova).
+  //-     p Up to a five-fold reduction in network bandwidth over simple baselines. 
+  //-     p Joint improvements in quality of delivered information, delivery latency, delivery cost, and mission success rate.
+
+      //- p
+      //-   a.btn.btn-raised(href='#', role='button') View details »

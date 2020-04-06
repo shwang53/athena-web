@@ -1,0 +1,203 @@
+extends ../layout
+
+block content
+  style.
+    #map {
+      width: 100%;
+      height: 600px;
+    }  
+
+    label{      
+      display: block; 
+      height: 35px; 
+      line-height: 35px; 
+      // border: 1px solid #000;       
+      margin-top: -7px;
+    }
+
+    button{
+      height: 35px;
+      margin-top: -7px;
+    }
+      
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 2013 European Floods Dataset Search
+
+  .row
+    .col-2       
+      label(class='col col-form-label font-weight-bold', for='stime', id='stime') 
+    .col-6      
+      link(href='/js/lib/nouislider/nouislider.min.css', rel='stylesheet')
+      script(src='/js/lib/nouislider/nouislider.min.js')
+      #slider-date
+    .col-2            
+      label(class='col col-form-label font-weight-bold', for='etime', id='etime') 
+    .col-2
+      button.btn-primary(id='submit', onclick='submit()').w-100
+        i.fas.fa-check-square.fa-sm
+        | Search
+  
+  p
+  p
+
+  .row
+    .col-12
+      #map
+
+  .row
+    .col-12
+      label(class='col col-form-label font-weight-bold', for='count', id='count')
+
+  script.
+    var map;    
+    var dateSlider = document.getElementById('slider-date'); 
+    var metadata = [];
+    var markers = [];   
+
+    noUiSlider.create(dateSlider, {
+    // Create two timestamps to define a range.
+        range: {
+            min: timestamp('2013-05-28T00:00:00Z'),
+            max: timestamp('2013-07-01T00:00:00Z')
+        },
+
+    // Steps of one week
+        step: 60*60*1000,
+
+    // Two more timestamps indicate the handle starting positions.
+        start: [timestamp('2013-06-01T00:00:00Z'), timestamp('2013-06-08T00:00:00Z')],
+
+    });
+
+    var dateValues = [
+      document.getElementById('event-start'),
+      document.getElementById('event-end')
+    ];
+
+    dateSlider.noUiSlider.on('update', function (values, handle) {
+      stime = Math.round(values[0])
+      etime = Math.round(values[1])      
+      document.getElementById('stime').textContent = new Date(stime).toLocaleString("en-US", {timeZone: "UTC", hour12: false});            
+      document.getElementById('etime').textContent = new Date(etime).toLocaleString("en-US", {timeZone: "UTC", hour12: false});            
+    });
+
+    // Create a new date from a string, return as a timestamp.
+    function timestamp(str) {
+      return new Date(str).getTime();
+    };
+
+    function submit() {      
+      fetch('/apps/eu_flood_dataset', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          stime: document.getElementById('stime').textContent,
+          etime: document.getElementById('etime').textContent       
+        })
+      }).then(function(response) {        
+        return response.text();
+      }).then(function(text) { 
+        // <!DOCTYPE ....        
+        metadata = JSON.parse(text);        
+        process_result(metadata);
+      });      
+    }
+
+    function process_result(metadata) {
+      deleteMarkers();
+
+      document.getElementById('count').textContent = metadata.length
+      metadata.forEach(function(meta){     
+        // console.log(meta);   
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(meta.coordinates.lat, meta.coordinates.lon),                            
+          title: meta.title,
+          // map: map;
+          animation: google.maps.Animation.DROP
+        });        
+        // marker.setMap(map);
+        filename = meta.pageid.toString()+".jpg"
+        publisher = meta.user        
+        var infowindow = new google.maps.InfoWindow({
+          content:`<div style='float:middle'><img src='/eu_flood_dataset/imgs/${filename}', width=250, height=200, align="middle"></div><div style='float:middle'><b>${meta.title}</b><br/>${meta.user}<br/>${meta.capture_time}</div>`,
+          maxWidth: 300,
+          maxHeight: 300
+        });
+        google.maps.event.addListener(marker, 'click', function(){infowindow.open(map, marker);});        
+        markers.push(marker);
+      })
+
+      showMarkers();
+    }
+
+    // Sets the map on all markers in the array.
+    function setMapOnAll(map) {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+      }
+    }
+
+    // Removes the markers from the map, but keeps them in the array.
+    function clearMarkers() {
+      setMapOnAll(null);
+    }
+
+    // Shows any markers currently in the array.
+    function showMarkers() {
+      setMapOnAll(map);
+    }
+
+    // Deletes all markers in the array by removing references to them.
+    function deleteMarkers() {
+      clearMarkers();
+      markers = [];
+    }
+
+    function initMap() {       
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 49.950747, lng: 14.413321 }, 
+        zoom: 6,  
+      });
+
+      // Customize map style
+      var customStyled =  [
+                            {
+                              "featureType": "administrative",
+                              "elementType": "geometry",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "poi",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "road",
+                              "elementType": "labels.icon",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "transit",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            }
+                          ]
+      map.set('styles',customStyled);      
+    }
+
+
+  script(async defer src=`https://maps.googleapis.com/maps/api/js?v=3&key=`+process.env.GOOGLE_MAP_API_KEY+`&callback=initMap`)    

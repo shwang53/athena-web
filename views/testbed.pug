@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  //- style.
+  //-   #map {
+  //-     width: 100%;
+  //-     height: 400px;
+  //-   }    
+
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Testbed
+  
+  .row
+    .col-12            
+      <iframe src="http://athena.cs.illinois.edu:5601/app/kibana#/dashboard/c74c25a0-92d0-11e9-950b-a1854f5f1022?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!f%2Cvalue%3A1000)%2Ctime%3A(from%3Anow-5m%2Cto%3Anow))" height="800" width="100%"></iframe>
+
+  script.
+    var map;    
+
+  //-   function initMap() {       
+  //-     map = new google.maps.Map(document.getElementById('map'), {
+  //-       center: { lat: 34.027054, lng: -118.279419 },
+  //-       zoom: 16,  
+  //-     });
+
+  //-     // Customize map style
+  //-     var customStyled =  [
+  //-                           {
+  //-                             "featureType": "administrative",
+  //-                             "elementType": "geometry",
+  //-                             "stylers": [
+  //-                               {
+  //-                                 "visibility": "off"
+  //-                               }
+  //-                             ]
+  //-                           },
+  //-                           {
+  //-                             "featureType": "poi",
+  //-                             "stylers": [
+  //-                               {
+  //-                                 "visibility": "off"
+  //-                               }
+  //-                             ]
+  //-                           },
+  //-                           {
+  //-                             "featureType": "road",
+  //-                             "elementType": "labels.icon",
+  //-                             "stylers": [
+  //-                               {
+  //-                                 "visibility": "off"
+  //-                               }
+  //-                             ]
+  //-                           },
+  //-                           {
+  //-                             "featureType": "transit",
+  //-                             "stylers": [
+  //-                               {
+  //-                                 "visibility": "off"
+  //-                               }
+  //-                             ]
+  //-                           }
+  //-                         ]
+  //-     map.set('styles',customStyled);
+  //-   }
+
+
+  //- script(async defer src=`https://maps.googleapis.com/maps/api/js?key=`+process.env.GOOGLE_MAP_API_KEY+`&callback=initMap`)
+
+    

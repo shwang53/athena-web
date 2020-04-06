@@ -1,0 +1,705 @@
+extends ../layout
+
+block content
+  style.
+    #map {
+      width: 100%;
+      height: 600px;
+    } 
+
+    #visualization {
+      width: 100%;
+      height: 600px;
+      //- border: 1px solid #000; 
+    } 
+
+    #wrapper {
+        position:relative;
+        width:100%;
+        height:600px;
+    }
+
+    #progress {
+        position:absolute;        
+        top: 0;
+        left: 0;
+        width:30px;
+        height:30px;
+        margin:auto auto auto auto;
+        font-size:22px;
+        color: #000000;
+    }    
+
+    label{      
+      display: block; 
+      height: 35px; 
+      line-height: 35px; 
+      // border: 1px solid #000;       
+      margin-top: -7px;
+    }
+
+    button{
+      height: 35px;
+      margin-top: -7px;
+    }
+      
+  .pb-2.mt-2.mb-4.border-bottom    
+      h3 Route Reconnassance in Disaster Areas
+
+  p
+
+  form(method='POST', id='form')
+    input(type='hidden', name='_csrf', value=_csrf)    
+    .form-group.row      
+      .col-md-3
+        label(class='col-md-12 col-form-label font-weight-bold', for='weight') Vehicle Weight
+        .col-xs-12
+          select.form-control(type='text', name='weight', id='weight')
+            option(value=0) -- Select --
+            option(value=1) less than 10t
+            option(value=2) less than 20t
+            option(value=3) less than 30t
+            option(value=4) greater than or equal to 30t
+
+      .col-md-3
+        label(class='col-md-12 col-form-label font-weight-bold', for='source') Source
+        .col-xs-12
+          select.form-control(type='text', name='source', id='source')
+            option(value='StaréMěsto') StaréMěsto
+            
+      .col-md-3
+        label(class='col-md-12 col-form-label font-weight-bold', for='dest') Destination
+        .col-xs-12
+          select.form-control(type='text', name='dest', id='dest')
+            option(value='MaláStrana') MaláStrana
+
+      .col-md-3
+        label(class='col-md-12 col-form-label font-weight-bold', for='annotator') Annotator
+        .col-xs-12
+          select.form-control(type='text', name='annotator', id='annotator')
+            option(value='0') -- Select --
+            option(value='1') Human
+            option(value='2') AI agent
+            option(value='3') Sensor
+  
+  p
+  p
+
+  .btn-group.d-flex(role='group')    
+    //- button.btn-primary(id='getTree', onclick='getTree()').w-100
+    //-   i.fas.fa-check-square.fa-sm
+    //-   | Generate Tree    
+    //- button.btn-primary(id='route_marker', onclick='getRouteMarkers()').w-100
+    //-   i.fas.fa-check-square.fa-sm
+    //-   | Route Markers
+    button.btn-primary(id='decide', onclick='decide()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Decide    
+    button.btn-primary(id='clear', onclick='reset()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Reset
+
+  p
+  p
+
+  .row
+    .col-6
+      #map
+    .col-6
+      script(src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js")
+      link(href="https://unpkg.com/vis-network@latest/dist/vis-network.min.js", rel="stylesheet", type="text/css")      
+      #wrapper
+        #visualization              
+        #progress
+  
+  .row      
+    label(class='col-md-12 col-form-label font-weight-bold', for='counter', id='count')
+     
+
+  script(src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js")
+  script.
+    var map;  
+    var directionsDisplays = [];    
+    var routes = {};
+    var metadata = {};
+    var dir_name;
+    var decision_logic;
+    var node_ids = {};
+
+    var is_deciding = false;        
+    var predicates = {};
+    //- var annotate_cache = {};
+    var annotate_markers = {};
+    var annotator = 0;
+    
+    var nodes;
+    var edges;
+
+    const colors = ['blue', 'red', 'green', 'orange', 'purple'];
+    const MAX_LABEL_NUM = 1000; 
+
+    document.getElementById("count").style.fontSize = "xx-large";
+    document.getElementById("count").style.textAlign = "center";
+        
+    //- var annotate_thread;
+    //- var predicate_thread;           
+
+    //- getRouteMarkers();
+
+    function drawTree(decision_logic) {      
+      console.log("Init DRAW");
+
+      var coa_id = 0;      
+      var nodes_data = [{id: 0, label: 'Decision', color:'black', font: {color:'white', size:50}, shape: 'box'}];
+      var edges_data = [];      
+      for (var color_idx=0; color_idx<colors.length; color_idx++) {                
+        coa = colors[color_idx];
+        coa_id = color_idx+1;        
+        //- console.log("Add ID: ", color_idx, "/", coa_id, "/",coa);
+
+        nodes_data.push({id: coa_id, label: coa, color:coa, font: {color:'white', size:50}, shape: 'box'});
+        edges_data.push({from: 0, to: coa_id});
+        var label_id = coa_id*MAX_LABEL_NUM;        
+        for (var i=0; i<decision_logic[coa].length; i++) {          
+          var p_name = decision_logic[coa][i]
+          label_id++;
+          if (node_ids[p_name] === undefined) {
+            node_ids[p_name] = [];
+          }
+          node_ids[p_name].push(label_id);
+          nodes_data.push({id: label_id, label: p_name, color:coa, font: {color:'white'}})
+          edges_data.push({from: coa_id, to: label_id})
+        }
+      }
+      nodes = new vis.DataSet(nodes_data);      
+      edges = new vis.DataSet(edges_data);
+
+      // create a network
+      var container = document.getElementById('visualization');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+        physics: {
+            forceAtlas2Based: {
+                gravitationalConstant: -26,
+                centralGravity: 0.005,
+                springLength: 230,
+                springConstant: 0.18
+            },
+            maxVelocity: 146,
+            solver: 'forceAtlas2Based',
+            timestep: 0.35,
+            stabilization: {
+                enabled:true,
+                iterations:2000,
+                updateInterval:25
+            }
+        },      
+        layout: {          
+          improvedLayout: false
+        }
+      };
+      network = new vis.Network(container, data, options);
+      network.on("stabilizationProgress", function(params) {          
+          var widthFactor = params.iterations/params.total;                     
+          document.getElementById('progress').textContent = Math.round(widthFactor*100) + '%';
+      });
+      network.once("stabilizationIterationsDone", function() {
+          document.getElementById('progress').textContent = '';                            
+      });     
+    }    
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function updateTree(predicates) {
+      //- console.log(predicates);
+      console.log(node_ids);
+      for (var p_name in predicates) {
+        if (p_name == "count" | p_name == '/viable_route/StaréMěsto/MaláStrana') {
+          continue;
+        }
+        value = predicates[p_name];
+        if (value == 0 & node_ids[p_name] !== undefined)  {          
+          for (var i=0; i<node_ids[p_name].length; i++) {            
+            coa_id = Math.floor(node_ids[p_name][i]/MAX_LABEL_NUM)
+            console.log("Remove "+coa_id.toString());
+            nodes.remove({id: coa_id});
+            for (var j=0; j<MAX_LABEL_NUM; j++) {
+              nodes.remove({id: coa_id*MAX_LABEL_NUM+j});
+            }
+          }          
+        } 
+        await sleep(10);
+      }      
+
+      for (var p_name in predicates) {
+        if (p_name == "count" | p_name == '/viable_route/StaréMěsto/MaláStrana') {
+          continue;
+        }
+        value = predicates[p_name];
+        if (value == 1 & node_ids[p_name] !== undefined) {
+          for (var i=0; i<node_ids[p_name].length; i++) {
+            console.log("Remove "+node_ids[p_name][i]);
+            coa_id = Math.floor(node_ids[p_name][i]/MAX_LABEL_NUM)
+            if (nodes.get(coa_id)) {
+              nodes.remove({id: node_ids[p_name][i]});            
+            }            
+          }          
+        }                
+        delete node_ids[p_name];               
+        await sleep(10);
+      }
+
+      if (predicates['/viable_route/StaréMěsto/MaláStrana'] !== undefined) {
+        if (predicates['/viable_route/StaréMěsto/MaláStrana'] == "unresolvable") {
+          nodes.update({id: 0, label: "Unresolvable", font: {color:'white', size:300}})
+          for (var i=0; i<colors.length; i++) {
+            nodes.remove({id: i+1});          
+          }
+          await sleep(100);
+        } else {
+          let decision = eval(predicates['/viable_route/StaréMěsto/MaláStrana']);
+          console.log("Decision is made!!"+decision)      
+          var retrieval_cnt = 0
+          if (predicates["count"] !== undefined) {
+            retrieval_cnt = predicates["count"];
+          }
+          document.getElementById("count").textContent = "118 / 62 / " + retrieval_cnt.toString();
+
+          if (decision == "No viable route") {
+            nodes.update({id: 0, label: "No viable route", font: {color:'white', size:300}})
+            await sleep(100);                      
+          } else {
+            for (var i=0; i<colors.length; i++) {
+              if (colors[i] == decision) {
+                nodes.update({id: 0, label: "Decision is", font: {color:'white', size:300}})
+                nodes.update({id: i+1, font: {color:'white', size:300}})
+              } else {
+                console.log("Remove "+(i+1))         
+                nodes.remove({id: i+1});
+                await sleep(100);
+              }
+            }
+          }       
+        }  
+        //- clearInterval(predicate_thread);
+        //- clearInterval(annotate_thread);
+        return          
+      } else {
+        await sleep(1000);
+        checkPredicates();
+        if (annotator == 1) {
+          checkAnnotateRequest();
+        }
+      }                      
+    }
+
+    function fetch_metadata() {
+      //- console.log(filePath);
+      fetch("/sa/data.json", {cache: "no-cache"})
+      .then(function(response) {
+          return response.json();
+      }).then(function(jsonData) {          
+          metadata = jsonData;
+      }).catch(function(err) {
+          console.log("Opps, Something went wrong!", err);
+      })
+    }
+
+    function checkPredicates() { 
+      console.log("Check predicates");
+
+      fetch(dir_name+"/predicates.json", {cache: "no-cache", mode: "no-cors"})
+      .then(function(response) {
+          //- console.log(response);                    
+          return response.json();          
+
+      }).then(function(jsonData) {          
+          //- console.log(jsonData);          
+          //- if (!_.isEqual(jsonData, predicates)) {
+          //-   console.log("decision tree changed!");
+          diff = {};
+          for (var key in jsonData) {
+            if (predicates[key] === undefined) {
+              diff[key] = jsonData[key]
+            }
+          }
+          predicates = jsonData;
+          updateTree(diff)            
+          //- } else {
+          //-   console.log("decision tree unchanged!");            
+          //- }
+
+        //- if (is_deciding == true) {
+        //-   setTimeout(checkPredicates, 1000);
+        //- }
+      }).catch(function(err) {
+        console.log("Opps, Something went wrong!", err);
+        checkPredicates();
+      })      
+    }
+
+    function checkAnnotateRequest() {       
+      console.log("Check annotate requests");
+
+      fetch(dir_name+"/annotate_request.json", {cache: "no-cache", mode: "no-cors"})
+      .then(function(response) {
+          //- console.log(response); 
+          return response.json();                   
+                              
+      }).then(async function(requests) {
+        console.log(requests)                    
+
+        if (requests.length > 0) {
+          for (var idx in requests) {
+            data_name = requests[idx];
+            data = metadata[data_name];            
+            //- console.log("New request: "+data_name);          
+            setAnnotateMarker(data_name, data);          
+
+            //- if (annotate_cache[data_name] !== undefined) {
+            //-   onAnnotation(data_name, annotate_cache[data_name]);              
+            //- } else {
+            //-   setAnnotateMarker(data_name, data);          
+            //- }          
+          }
+        } else {
+          await sleep(1000);
+          console.log("Request again");
+          checkAnnotateRequest()
+        }          
+      }).catch(function(err) {
+        console.log("Opps, Something went wrong!", err);
+        checkAnnotateRequest();
+      })
+
+    }
+
+    function getTree() {      
+      //- console.log(JSON.stringify(routes));
+      fetch('/apps/rr', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "routes",
+          routes: routes
+        })
+      }).then(function(response) {                
+        return response.text();
+      }).then(function(text) {       
+        //- console.log(text);
+        dir_name = text; 
+        fetch(dir_name+'/decision_tree.json', {cache: "no-cache"})
+        .then(function(response) {
+            return response.json();
+        }).then(function(jsonData) {          
+            //- console.log(jsonData);          
+            drawTree(jsonData);            
+        }).catch(function(err) {
+            console.log("Opps, Something went wrong!", err);
+        })        
+      })
+    }
+
+    function getRouteMarkers() {
+      console.log("get route markers!");
+      fetch("/rr/route_coordinates.json", {cache: "no-cache"})
+      .then(function(response) {
+          return response.json();
+      }).then(function(jsonData) {          
+         setMarkers(jsonData);
+      }).catch(function(err) {
+          console.log("Opps, Something went wrong!", err);
+      })
+    }
+
+    function decide() {
+      console.log("decide!");
+      is_deciding = true;
+      //- clearInterval(predicate_thread);
+      //- clearInterval(annotate_thread);
+
+      annotator = document.getElementById('annotator').value;
+      if ( annotator == 0) {
+        console.log("Please select annotator!");
+        return
+      }
+
+      fetch('/apps/rr', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "decide",
+          vehicle_weight: document.getElementById('weight').value,
+          source: document.getElementById('source').value,
+          dest: document.getElementById('dest').value,          
+          annotator: annotator
+        })
+      }).then(function(response) {                
+        return response.text();
+      }).then(function(text) {         
+        //- setMarkers(JSON.parse(text)); 
+        console.log(text);
+        if ( annotator == 1 ) {
+          console.log("Human annotator selected!");
+          checkAnnotateRequest();          
+        }            
+        //- predicate_thread = setInterval(checkPredicates, 1000);  
+        checkPredicates()
+      })
+    }
+
+    function setMarkers(routes) {
+      console.log(routes);
+      for (var key in routes) {
+        var coordinates = routes[key];
+        var marker;
+        for (var i=0; i<coordinates.length; i++) {          
+          marker = new google.maps.Marker({
+          position: new google.maps.LatLng(coordinates[i][0], coordinates[i][1]), 
+          icon: {                        
+            url: "http://maps.google.com/mapfiles/ms/icons/"+key+"-dot.png"                 
+          },
+          title: coordinates[i].toString()
+        });        
+        marker.setMap(map);
+
+        }
+      }
+    }
+
+    function setAnnotateMarker(data_name, data) {
+      console.log("setAnnotateMarker for "+data_name);      
+      console.log("meta data: "+data);
+      if (data_name in annotate_markers) {
+        return;
+      }
+
+      var coordinate = data[0];
+      var marker;      
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(coordinate[0], coordinate[1]),         
+        title: coordinate.toString()
+      });              
+      annotate_markers[data_name] = marker;        
+      name_comps = data_name.split("/")  
+      filename = name_comps[name_comps.length-1]+'.jpg'      
+      var infowindow = new google.maps.InfoWindow({
+        content:`<div style='float:middle'><img src='/eu_flood_dataset/imgs/${filename}', width=250, height=200, align="middle">
+        <button onclick="onAnnotation(data_name, 0)">Viable</button>
+        <button onclick="onAnnotation(data_name, 1)">Not Viable</button>        
+        </div><div style='float:middle'>`,
+        maxWidth: 300,
+        maxHeight: 300
+      });
+      google.maps.event.addListener(marker, 'click', function(){infowindow.open(map, marker);});  
+      marker.setMap(map);
+    }
+
+    function onAnnotation(data_name, answer) {
+      console.log("Annotate for "+data_name);
+      //- annotate_cache[data_name] = answer;
+      annotate_markers[data_name].setMap(null);        
+      console.log(annotate_markers.length);      
+
+      fetch('/apps/rr', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "annotate",
+          value: answer
+        })
+      }).then(function(response) {                
+        return response.text();
+      }).then(function(text) {         
+        //- setMarkers(JSON.parse(text));         
+        console.log(text); 
+        //- checkAnnotateRequest();               
+      })
+    }
+
+    function getRouteAndDisplay() {      
+      fetch('/apps/rr', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "init"        
+        })
+      }).then(function(response) {                
+        return response.text();
+      }).then(function(text) { 
+        // <!DOCTYPE ....               
+        var responses = JSON.parse(text);      
+
+        for (var i=0; i<responses.length; i++) {          
+          routes[colors[i]] = responses[i].routes[0];
+          var bounds = new google.maps.LatLngBounds(responses[i].routes[0].bounds.southwest, responses[i].routes[0].bounds.northeast);
+          responses[i].routes[0].bounds = bounds;
+          responses[i].routes[0].overview_path = google.maps.geometry.encoding.decodePath(responses[i].routes[0].overview_polyline.points);
+
+          responses[i].routes[0].legs = responses[i].routes[0].legs.map(function (leg) {
+            leg.start_location = new google.maps.LatLng(leg.start_location.lat, leg.start_location.lng);
+            leg.end_location = new google.maps.LatLng(leg.end_location.lat, leg.end_location.lng);
+            leg.steps = leg.steps.map(function (step) {
+              step.path = google.maps.geometry.encoding.decodePath(step.polyline.points);
+              step.start_location = new google.maps.LatLng(step.start_location.lat, step.start_location.lng);
+              step.end_location = new google.maps.LatLng(step.end_location.lat, step.end_location.lng);
+              return step;
+            });
+            return leg;
+          });
+
+          var directionsDisplay = new google.maps.DirectionsRenderer;   
+          directionsDisplay.setDirections(responses[i]);
+          directionsDisplay.setOptions({
+            polylineOptions: {
+                        strokeWeight: 4,
+                        strokeOpacity: 1,
+                        strokeColor:  colors[i%colors.length]
+            },
+            suppressMarkers: true,
+            preserveViewport: true
+          });          
+          
+          directionsDisplay.setMap(map);
+          directionsDisplays.push(directionsDisplay);
+        }
+
+        fetch_metadata();
+        getTree();
+   
+      })
+    }
+
+    //- function clearRoutes() {
+
+    //-   for (var i=0; i<directionsDisplays.length; i++) {
+    //-     directionsDisplays[i].setMap(null);
+    //-   }      
+    //- }
+
+    function reset() {
+      console.log("reset");        
+      predicates = {};
+      annotate_cache = {};
+      annotate_markers = [];      
+      document.getElementById("count").textContent = "";
+      
+      fetch('/apps/rr', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "reset"        
+        })
+      }).then(function(response) {                
+        return response.text();
+      }).then(function(text) { 
+        is_deciding = false;
+      })
+
+      getRouteAndDisplay();
+
+    }
+
+    function reorder(cnt) {
+
+      //- console.log("reorder: ", cnt);      
+      directionsDisplays[cnt].setMap(null);    
+      directionsDisplays[cnt].setMap(map);    
+
+    }
+
+    function initMap() {       
+      
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 50.081349, lng: 14.410791 },       
+        zoom: 14,  
+      });
+
+      var centerControlDiv = document.createElement('div');
+      var centerControl = new CenterControl(centerControlDiv, map);
+
+      centerControlDiv.index = 1;
+      map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+
+      // Customize map style
+      var customStyled =  [
+                            {
+                              "featureType": "administrative",
+                              "elementType": "geometry",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "poi",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "road",
+                              "elementType": "labels.icon",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "transit",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            }
+                          ]
+      map.set('styles',customStyled); 
+
+      getRouteAndDisplay();            
+    }
+
+    function CenterControl(controlDiv, map) {
+      var cnt=0;
+
+      // Set CSS for the control border.
+      var controlUI = document.createElement('div');
+      controlUI.style.backgroundColor = '#fff';
+      controlUI.style.border = '2px solid #fff';
+      controlUI.style.borderRadius = '3px';
+      controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+      controlUI.style.cursor = 'pointer';
+      controlUI.style.marginBottom = '22px';
+      controlUI.style.textAlign = 'center';
+      controlUI.title = 'Click to recenter the map';
+      controlDiv.appendChild(controlUI);
+
+      // Set CSS for the control interior.
+      var controlText = document.createElement('div');
+      controlText.style.color = 'rgb(25,25,25)';
+      controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+      controlText.style.fontSize = '16px';
+      controlText.style.lineHeight = '38px';
+      controlText.style.paddingLeft = '5px';
+      controlText.style.paddingRight = '5px';
+      controlText.innerHTML = 'Reorder routes';
+      controlUI.appendChild(controlText);
+
+      // Setup the click event listeners: simply set the map to Chicago.
+      controlUI.addEventListener('click', function() {        
+        reorder(cnt++ % colors.length);
+      });
+
+    }
+
+
+  script(async defer src=`https://maps.googleapis.com/maps/api/js?v=3&key=`+process.env.GOOGLE_MAP_API_KEY+`&libraries=drawing,geometry&callback=initMap`)    

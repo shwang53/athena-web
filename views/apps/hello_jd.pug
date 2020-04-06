@@ -1,0 +1,482 @@
+extends ../layout  
+
+block content
+  style.    
+    button {
+      height: 40px;
+    }        
+
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Hello JD  
+
+  form(method='POST', id='form')
+    input(type='hidden', name='_csrf', value=_csrf)    
+    .form-group.row      
+      .col-md-6
+        label(class='col-md-4 col-form-label font-weight-bold', for='target') Targets
+        .col-xs-12
+          select.form-control(type='text', name='target', id='target')
+            option(value='0') -- Select --
+            option(value='188') Police car
+            // option(value='53') Audi A4 Black
+            // option(value='187') Honda civic silver            
+            option(value='284') Black Honda Hatchbag
+            // option(value='282') Sliver SUV
+            option(value='263') White Toyota Prius 
+          // input.form-control(type='text', name='target', id='target', autofocus=true)
+
+      .col-md-6
+        label(class='col-md-4 col-form-label font-weight-bold', for='algo') Algorithm
+        .col-xs-12
+          select.form-control(type='text', name='algo', id='algo')
+            option(value='0') -- Select --
+            option(value='1') Baseline
+            option(value='2') Frequency
+            option(value='3') Out-direction
+            option(value='4') Out-direction with timeout
+            option(value='5') Out-direction with learned delay
+
+  .btn-group.d-flex(role='group')
+    button.btn-primary(id='submit', onclick='submit()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Run
+    button.btn-primary(id='stop', onclick='stop()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Stop  
+    button.btn-primary(id='resume', onclick='resume()').w-100
+      i.fas.fa-check-square.fa-sm
+      | Pause/Resume
+
+  p
+  p
+
+  .row
+    .col-3
+      // .cam20-border        
+      video(id='cam20', width='100%', muted)
+        source(src='/cam20.mp4', type='video/mp4')    
+        source(src='/cam20.mp4', type='video/ogg')
+
+      // .cam106-border      
+      video(id='cam106', width='100%', muted)
+        source(src='/cam106.mp4', type='video/mp4')    
+        source(src='/cam106.ogg', type='video/ogg') 
+      // .cam102-border      
+      video(id='cam102', width='100%', muted)
+        source(src='/cam102.mp4', type='video/mp4')    
+        source(src='/cam102.ogg', type='video/ogg')               
+    .col-6
+      #map
+    .col-3    
+      video(id='cam69', width='100%', muted)
+        source(src='/cam69.mp4', type='video/mp4')    
+        source(src='/cam69.mp4', type='video/ogg')                
+      video(id='cam19', width='100%', muted)
+        source(src='/cam19_.mp4', type='video/mp4')    
+        source(src='/cam19_.mp4', type='video/ogg')                 
+      video(id='cam18', width='100%', muted)
+        source(src='/cam18.mp4', type='video/mp4')    
+        source(src='/cam18.mp4', type='video/ogg')              
+
+  p
+  p
+
+  .row      
+    .col
+      // .cam22-border
+      video(id='cam22', width='100%', muted)
+        source(src='/cam22_.mp4', type='video/mp4')    
+        source(src='/cam22_.mp4', type='video/ogg')        
+    .col
+      // .cam23-border
+      video(id='cam23', width='100%', muted)
+        source(src='/cam23_.mp4', type='video/mp4')    
+        source(src='/cam23_.mp4', type='video/ogg')              
+    .col
+      // .cam103-border
+      video(id='cam103', width='100%', muted)
+        source(src='/cam103.mp4', type='video/mp4')    
+        source(src='/cam103.mp4', type='video/ogg')       
+    .col
+      // .cam71-border
+      video(id='cam71', width='100%', muted)
+        source(src='/cam71.mp4', type='video/mp4')    
+        source(src='/cam71.mp4', type='video/ogg')              
+      
+
+  p
+  p
+  
+  .row
+    .col-7
+    .col-2
+      label(class='col col-form-label font-weight-bold', for='rtime') DATE / TIME (PST)
+    .col-3
+      label(class='col col-form-label font-weight-bold', for='rtime', id='rtime') 
+    // .col
+    //   label(class='col-md-4 col-form-label font-weight-bold', for='stime') STIME
+    // .col
+    //   label(class='col-md-4 col-form-label font-weight-bold', for='stime', id='stime') 0
+
+
+
+  script.
+    var map;    
+    var cameras = [
+
+      {
+        ID: 'cam102',        
+        latitude: 34.027096,
+        longitude: -118.282953,
+        rotation: 150,
+        start: 1453587358,        
+        // start: 1453587334,        
+        color: 'darkred'
+      },
+      {
+        ID: 'cam103',
+        latitude: 34.025662,
+        longitude: -118.279818,
+        rotation: -100,
+        start: 1453587320,
+        color: 'green'
+      },
+      {
+        ID: 'cam106',
+        latitude: 34.027676,
+        longitude: -118.281325,
+        rotation: -100,
+        start: 1453587352,
+        color: 'pink'
+      },
+      {
+        ID: 'cam18',
+        latitude: 34.026276,
+        longitude: -118.277679,
+        rotation: -30,
+        start: 1453586400,
+        color: 'blueviolet'
+      },
+      {
+        ID: 'cam19',
+        latitude: 34.027054,
+        longitude: -118.279419,
+        rotation: 120,
+        start: 1453586400,
+        color: 'skyblue'
+      },
+      {
+        ID: 'cam20',
+        latitude: 34.02824,
+        longitude: -118.282066,
+        rotation: -45,
+        start: 1453586400,
+        color: 'red'
+      },
+      {
+        ID: 'cam22',
+        latitude: 34.026672,
+        longitude: -118.281548,
+        rotation: 110,
+        start: 1453586400,
+        color: 'yellow'
+      },
+      {
+        ID: 'cam23',
+        latitude: 34.026325,
+        longitude: -118.280708,
+        rotation: 30,
+        start: 1453586400,
+        color: 'gold'
+      },
+      {
+        ID: 'cam69',
+        latitude: 34.028664,
+        longitude: -118.280495,
+        rotation: -70,
+        start: 1453586400,
+        color: 'blue'
+      },
+      {
+        ID: 'cam71',
+        latitude: 34.025368,
+        longitude: -118.278984,
+        rotation: -90,
+        start: 1453586400,
+        color: 'lightgreen'
+      }
+    ];       
+
+    var target_markers = [];
+    var target_markers2 = [];
+    var camera_markers = {};
+    var camera_markers2 = {};
+    var display_target_running = false;
+    var display_video_running = false;
+    var is_paused = false;
+
+    function submit() {  
+      if (display_target_running || display_target_running)
+        return
+
+      if (document.getElementById('algo').value == 0 || document.getElementById('target').value == 0)
+        return
+      
+      is_paused = false
+      var form = document.getElementById('form');      
+      fetch('/apps/target_tracker', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          algo: document.getElementById('algo').value,
+          target: document.getElementById('target').value          
+        })
+      }).then(function(response) {        
+        return response.text();
+      }).then(function(text) { 
+        // <!DOCTYPE ....        
+        result = JSON.parse(text);        
+        process_result(JSON.parse(result.target_locs), JSON.parse(result.camera_time)); 
+      });      
+    }
+
+    function process_result(target_locs, camera_time) {
+      console.log("PROCESS");      
+      // Animate targets           
+
+      init_timestamp = camera_time[0][0]        
+      
+      target_locs.forEach(function(loc) {        
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(loc[0], loc[1]),
+          icon: {            
+            url: 'http://maps.google.com/mapfiles/ms/icons/bus.png',
+            anchor: new google.maps.Point(20,20),
+            scaledSize: new google.maps.Size(40, 40)
+          },
+          map: map,                  
+          visible: false
+        }); 
+
+        var marker2 = new google.maps.Marker({
+          position: new google.maps.LatLng(loc[0], loc[1]),
+          icon: {            
+            url: 'http://maps.google.com/mapfiles/ms/icons/blue-pushpin.png',
+            scaledSize: new google.maps.Size(10, 10)
+          },
+          map: map,                  
+          visible: false
+        }); 
+
+        target_markers.push(marker);
+        target_markers2.push(marker2);
+      });
+
+      period = 1;
+      if (target_markers.length > 0) {        
+        displayTarget(init_timestamp, target_markers, 0, period);            
+        displayVideo(init_timestamp, target_markers2, 0, period, camera_time);    
+      }
+    }
+
+    function stop() {
+      target_markers = [];     
+      target_markers2 = [];  
+      is_paused = false
+      initMap(); 
+      console.log("STOP")
+      document.getElementById('rtime').textContent = "";
+      cameras.forEach(function(cam) {                   
+          var video = document.getElementById(cam.ID);                  
+          video.pause();                
+      });      
+    }
+
+
+    function resume() {
+      console.log("RESUME")
+      if (!is_paused) {
+        is_paused = true        
+      } else {
+        is_paused = false              
+      }        
+    }    
+
+    function displayTarget(timestamp, target_locs, index, period) {             
+      window.display_target_running = true;        
+      if (index > 0) {                
+        target_locs[index-period].setVisible(false)                  
+      }      
+
+      if (index >= target_markers.length) {
+        window.display_target_running = false;        
+        return
+      }        
+      
+      target_locs[index].setVisible(true);
+      document.getElementById('rtime').textContent = new Date(timestamp*1000).toLocaleString("en-US", {timeZone: "America/Los_Angeles"}) ;
+            
+      setTimeout(function () {
+        if (is_paused)
+          displayTarget(timestamp, target_locs, index, period);
+        else
+          displayTarget(timestamp+period, target_locs, index+period, period);          
+      }, period*1000);
+      
+    } 
+  
+    function displayVideo(timestamp, target_locs, index, period, camera_time) {                  
+      window.display_video_running = true;      
+      if (index >= target_markers2.length) { 
+        window.display_video_running = false;                    
+        return
+      }
+
+      // document.getElementById('stime').textContent = timestamp;          
+
+      var selected = Array()
+      while (camera_time.length >0 && timestamp >= camera_time[0][0]) {        
+        selected = camera_time.shift()
+      }
+
+      if (selected.length > 0) {
+        // Play video    
+        cameras.forEach(function(cam) {           
+          if (selected[1].includes(parseInt(cam.ID.replace('cam', '')))) {
+            // If detected
+            document.getElementById(cam.ID).style.filter = 'blur(0px)';
+            camera_markers[cam.ID].setVisible(true);
+            camera_markers2[cam.ID].setVisible(false);
+            document.getElementById(cam.ID).style.borderColor = cam.color;
+            // camera_markers[cam.ID].setAnimation(google.maps.Animation.BOUNCE);
+            
+            var video = document.getElementById(cam.ID);        
+            var start = init_timestamp+index*period - cam.start;            
+            video.currentTime = start;             
+            if (start > 0) {
+              video.addEventListener('loadedmetadata', function() {
+                this.currentTime = start;                
+              }, false);                               
+
+              video.addEventListener('timeupdate', function() {
+                if(this.currentTime > start + period){
+                  this.pause();
+                }
+              });
+            }
+            video.play();        
+          } else {
+            document.getElementById(cam.ID).style.filter = 'blur(10px)';
+            camera_markers[cam.ID].setVisible(false);
+            camera_markers2[cam.ID].setVisible(true);
+            document.getElementById(cam.ID).style.borderColor = "lightgray";
+          } 
+          // camera_markers[cam.ID].setAnimation(null)          
+        });      
+
+        // Display current request poinst
+        target_locs[index].setVisible(true)
+      }            
+
+      // Iterate
+      setTimeout(function () {  
+        if (is_paused)        
+          displayVideo(timestamp, target_locs, index, period, camera_time)
+        else
+          displayVideo(timestamp+period, target_locs, index+period, period, camera_time)
+      }, period*1000);        
+
+    }
+
+    function initMap() {       
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 34.027054, lng: -118.279419 },
+        zoom: 16,  
+      });
+
+      // Customize map style
+      var customStyled =  [
+                            {
+                              "featureType": "administrative",
+                              "elementType": "geometry",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "poi",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "road",
+                              "elementType": "labels.icon",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            },
+                            {
+                              "featureType": "transit",
+                              "stylers": [
+                                {
+                                  "visibility": "off"
+                                }
+                              ]
+                            }
+                          ]
+      map.set('styles',customStyled);
+
+      // Place cameras in the map
+      cameras.forEach(function(cam) {        
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(cam.latitude, cam.longitude),          
+          icon: {
+            path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+            scale: 5,          
+            fillColor: cam.color,          
+            fillOpacity: 1.0,   
+            strokeColor: 'black',  
+            strokeWeight: 1,
+            rotation: cam.rotation  
+          },          
+          map: map,
+          title: cam.ID,
+          // animation: google.maps.Animation.DROP
+        });
+
+        var marker2 = new google.maps.Marker({
+          position: new google.maps.LatLng(cam.latitude, cam.longitude),          
+          icon: {
+            path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+            scale: 5,          
+            fillColor: 'gray', 
+            fillOpacity: 1.0,   
+            strokeColor: 'black',  
+            strokeWeight: 1,
+            rotation: cam.rotation  
+          },          
+          map: map,
+          title: cam.ID,
+          // animation: google.maps.Animation.DROP          
+        });
+
+        camera_markers[cam.ID] = marker;
+        marker2.setVisible(false);
+        camera_markers2[cam.ID] = marker2;
+
+        document.getElementById(cam.ID).style.borderColor = cam.color;
+        document.getElementById(cam.ID).style.filter = "blur(0px)";
+
+      });                  
+
+    }
+
+
+  script(async defer src=`https://maps.googleapis.com/maps/api/js?key=`+process.env.GOOGLE_MAP_API_KEY+`&callback=initMap`)
